@@ -1,0 +1,70 @@
+
+.skillset-card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.skillset-card {
+    width: 24vw;
+    height: 30vw;
+    margin: 10px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+}
+
+.skillset-card:hover {
+    transform: scale(1.05);
+}
+.skillset-card:hover .rotating {
+    animation: rotating 4s linear infinite;
+}
+
+.skillset-card-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f1f1f1;
+}
+
+.skillset-card-content {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    color: #f1f1f1;
+}
+
+.skillset-card-image {
+    width: 70%;
+    height: 50%;
+    margin-top: 10px;
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+}
+
+.skill {
+    margin-right: 0.4vw;
+    margin-bottom: 0.2vw;
+}
+
+.rotating {
+    animation: rotating 8s linear infinite;
+    position: relative;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.z10 {
+    z-index: 10;
+    position: relative;
+}

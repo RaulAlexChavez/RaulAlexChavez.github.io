@@ -3,12 +3,15 @@
     padding: 1rem;
     margin-right: 1rem;
     width: 40%;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .no-link-nav {
     text-decoration: none;
     color: #445b89;
     width: 10%;
+    pointer-events: auto;
 }
 
 .nav-item-text {
@@ -33,15 +36,15 @@
     margin-right: -300vw;
     width: 600%;
     transition: opacity 0.8s ease, transform 1.5s ease;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
 .hidden-text:hover {
     opacity: 1;
-    transform: translateX(-90px); /*-45%*/
+    transform: translateX(-110px); /*-45%*/
     width: 600%;
     text-shadow: #08101f -0.2vw 0.2vw 0.2vw;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
     align-items: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.7s ease, transform 0.4s ease;
 }

@@ -1,5 +1,43 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import "./Home.css";
+
+interface SkillCardProps {
+  title: string,
+  image?: string,
+  imageComponent?: JSX.Element,
+  experience?: string,
+  bgColor?: string,
+  skills: string[]
+}
+
+const SkillCard = (props: SkillCardProps):JSX.Element => {
+  return (
+    <div className="skillset-card" style={{backgroundColor: props.bgColor ?? "1a1a1a"}}>
+    <div className="skillset-card-title">{props.title}</div>
+    {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} />}
+    <div className="skillset-card-content">
+      {props.experience ?
+        <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw" }}>{props.experience} XP</span>
+        : null
+      }
+      <div>
+        {props.skills.map((skill, index) => (
+          <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+  );
+}
+
+const GameDevIcon = () => {
+  return (
+    <div>
+      <img className="skillset-card-image rotating" src={"images/gear.png"} alt={"engine"} style={{marginTop: "-4vw", marginBottom: "-15vw", width: "60%"}} />
+      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-3vw"}}/>
+    </div>
+  );
+}
 
 function Home() {
   const logicColor = "yellow-fg";
@@ -36,7 +74,25 @@ function Home() {
         </div>
       </div>
       <h1 className="super-title">What are we working on today?</h1>
-      .NET Dev - Game Dev - Web Dev
+      <div className="skillset-card-group">
+        <SkillCard
+          bgColor="#403060"
+          image="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg"
+          title=".NET"
+          skills={["ASP.NET", "MVC", "Blazor", "Web API", "Entity Framework", "Unit Testing"]}  
+        />
+        <SkillCard
+          bgColor="#003300"
+          experience="3y+"
+          imageComponent={<GameDevIcon/>}
+          title="Game Dev"
+          skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
+        />
+      </div>
+
+      <br/>
+      <br/>
+      
     </div>
   );
 }
