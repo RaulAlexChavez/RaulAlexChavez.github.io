@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { HoverableRotation } from "../components";
 
 interface SkillCardProps {
   title: string,
@@ -8,33 +9,46 @@ interface SkillCardProps {
   experience?: string,
   bgColor?: string,
   skills: string[]
+  width?: string
 }
 
 const SkillCard = (props: SkillCardProps):JSX.Element => {
   return (
-    <div className="skillset-card" style={{backgroundColor: props.bgColor ?? "1a1a1a"}}>
-    <div className="skillset-card-title">{props.title}</div>
-    {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} />}
-    <div className="skillset-card-content">
-      {props.experience ?
-        <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw" }}>{props.experience} XP</span>
-        : null
-      }
-      <div>
-        {props.skills.map((skill, index) => (
-          <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
-        ))}
+    <HoverableRotation
+      rotatingClassName="rotating"
+      rotateOnHoverClassName="wrapper-rotating"
+      hoverableParent="skillset-card"
+      rotateSpeed={0.5/10}
+      rotateOnHoverExtraSpeed={1.2/10}
+    >
+      <div className="skillset-card" style={{backgroundColor: props.bgColor ?? "#1e1e1e"}}>
+        <div className="skillset-card-title">{props.title}</div>
+        {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} style={{width: props.width ?? "60%"}}/>}
+        <div className="skillset-card-content">
+          {props.experience ?
+            <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw" }}>{props.experience} XP</span>
+            : null
+          }
+          <div>
+            {props.skills.map((skill, index) => (
+              <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </HoverableRotation>
   );
 }
 
 const GameDevIcon = () => {
   return (
-    <div>
-      <img className="skillset-card-image rotating" src={"images/gear.png"} alt={"engine"} style={{marginTop: "-4vw", marginBottom: "-15vw", width: "60%"}} />
-      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-3vw"}}/>
+    <div className="">
+      <div className="gear-container">
+        <div className="wrapper-rotating">
+          <img className="rotating" src={"images/gear.png"} alt={"engine"} style={{width: "100%", height: "100%"}}/>
+        </div>
+      </div>
+      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-2rem"}}/>
     </div>
   );
 }
@@ -76,10 +90,12 @@ function Home() {
       <h1 className="super-title">What are we working on today?</h1>
       <div className="skillset-card-group">
         <SkillCard
-          bgColor="#403060"
+          experience="1y"
+          bgColor="#402560"
           image="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg"
           title=".NET"
           skills={["ASP.NET", "MVC", "Blazor", "Web API", "Entity Framework", "Unit Testing"]}  
+          width="53%"
         />
         <SkillCard
           bgColor="#003300"
@@ -87,6 +103,12 @@ function Home() {
           imageComponent={<GameDevIcon/>}
           title="Game Dev"
           skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
+        />
+        <SkillCard
+          experience="1y+"
+          image="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png"
+          title="Web Dev"
+          skills={["React", "Next", "Mongo", "SQL", "JS", "Bootstrap",  "TypeScript", "HTML"]}  
         />
       </div>
 
@@ -97,3 +119,8 @@ function Home() {
   );
 }
 export default Home;
+
+// TODO: Make Navbar responsibe to Pc
+// TODO: Make Navbar responsibe to Mobile
+// TODO: Make exerthing else responsive to PC
+// TODO: Make exerthing else responsive to Mobile

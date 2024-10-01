@@ -8,8 +8,8 @@
 }
 
 .skillset-card {
-    width: 24vw;
-    height: 30vw;
+    width: 28rem;
+    height: 34rem;
     margin: 10px;
     padding: 20px;
     background-color: #1a1a1a;
@@ -20,9 +20,6 @@
 
 .skillset-card:hover {
     transform: scale(1.05);
-}
-.skillset-card:hover .rotating {
-    animation: rotating 4s linear infinite;
 }
 
 .skillset-card-title {
@@ -38,11 +35,11 @@
 }
 
 .skillset-card-image {
-    width: 70%;
-    height: 50%;
+    width: 60%;
+    height: auto;
     margin-top: 10px;
     border-radius: 1vw;
-    margin-bottom: 1vw;
+    margin-bottom: 1rem;
 }
 
 .skill {
@@ -50,18 +47,16 @@
     margin-bottom: 0.2vw;
 }
 
-.rotating {
-    animation: rotating 8s linear infinite;
-    position: relative;
-}
-
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.gear-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 14rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: -11.5rem;
+    padding: 0;
 }
 
 .z10 {
