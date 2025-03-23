@@ -56,7 +56,6 @@ const GameDevIcon = () => {
 
 function Home() {
   const logicColor = "yellow-fg";
-  const practicalColor = "cyan-fg";
   return (
     <div className="text-center" style={{ marginTop: "1vw" }}>
       <h1 className="super-title">Welcome, <span className="light-blue-fg fw-bold">developer</span> !</h1>
