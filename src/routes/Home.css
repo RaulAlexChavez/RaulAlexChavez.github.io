@@ -1,25 +1,25 @@
 
 .intro {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-right: 4vw;
+    padding-left: 4vw;
 }
 
 .skillset-card-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.6vw;
     z-index: 10;
 }
 
 .skillset-card {
-    width: 24rem;
-    height: 34rem;
-    margin: 10px;
-    padding: 20px;
+    width: 24vw;
+    height: 34vw;
+    margin: 0.8vw;
+    padding: 1.6vw;
     background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 0.8vw;
+    box-shadow: 0 0 1vw 0 rgba(0, 0, 0, 0.3);
     transition: transform 0.5s;
 }
 
@@ -28,23 +28,23 @@
 }
 
 .skillset-card-title {
-    font-size: 3rem;
+    font-size: 3vw;
     font-weight: 700;
     color: #f1f1f1;
 }
 
 .skillset-card-content {
-    margin-top: 10px;
-    font-size: 1.6rem;
+    margin-top: 0.8vw;
+    font-size: 1.6vw;
     color: #f1f1f1;
 }
 
 .skillset-card-image {
     width: 60%;
     height: auto;
-    margin-top: 10px;
+    margin-top: 1vw;
     border-radius: 1vw;
-    margin-bottom: 1rem;
+    margin-bottom: 1vw;
 }
 
 .skill {
@@ -56,11 +56,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 14rem;
-    height: 14rem;
+    width: 14vw;
+    height: 14vw;
     margin: auto;
-    margin-top: 1rem;
-    margin-bottom: -11.5rem;
+    margin-top: 1vw;
+    margin-bottom: -12.2vw;
     padding: 0;
 }
 

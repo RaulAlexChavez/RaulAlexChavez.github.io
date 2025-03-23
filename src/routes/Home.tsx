@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import "../styles/global.css";
 import { HoverableRotation } from "../components";
 
 interface SkillCardProps {
@@ -48,43 +49,31 @@ const GameDevIcon = () => {
           <img className="rotating" src={"images/gear.png"} alt={"engine"} style={{width: "100%", height: "100%"}}/>
         </div>
       </div>
-      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-2rem"}}/>
+      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-1vw"}}/>
     </div>
   );
 }
 
 function Home() {
   const logicColor = "yellow-fg";
-  const logicColor2 = "yellow-fg";
   const practicalColor = "cyan-fg";
-  const practicalColor2 = practicalColor;
   return (
-    <div className="text-center" style={{ marginTop: "1rem" }}>
-      <h1 className="super-title" style={{ fontSize: "5vw", marginTop: "2rem", marginBottom: "2rem" }}>Welcome, <span className="light-blue-fg fw-bold">developer</span> !</h1>
+    <div className="text-center" style={{ marginTop: "1vw" }}>
+      <h1 className="super-title">Welcome, <span className="light-blue-fg fw-bold">developer</span> !</h1>
       
       <div className="intro">
-        <p className="text-start" style={{ fontSize: "1.8vw", marginLeft: "1.5rem", marginRight: "1.5rem" }}>
-          Hi, I'm <span className="orange-fg fw-bold">Raul Alex Chavez</span>, a passionate developer who loves making the life of people easier
-          and enjoyable. I'm always learning and up to the challenge!
-        </p>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img className="shadow-custom" src="images/me-cup-chocolate.jpg" alt="Your Name" style={{ width: '11rem', height: '11rem', borderRadius: '40%', marginRight: '2rem' }} />
+          <img className="shadow-custom" src="images/me-cup-chocolate.jpg" alt="My Name" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
           <div className="text-start">
             <p>
-              I love <span className={`${logicColor} fw-bold`}>organization</span> and{" "}
-              <span className={`${logicColor} fw-bold`}>logic</span>,
-              so I'll be happy <span className={`${logicColor2} fw-bold`}>designing classes</span>,{" "}
-              doing <span className={`${logicColor2} fw-bold`}>scalable backend</span> and{" "}
-              <span className={`${logicColor2} fw-bold`}>creating cool mechanics for my game</span>.
+              Hi, I'm <span className="orange-fg fw-bold">Raul Alex Chavez</span>, a passionate developer who loves <span className="orange-fg fw-bold">making the life of people easier</span>. I'm <span className="orange-fg fw-bold">always learning</span> and up to the challenge!
             </p>
             <p>
-              But I'm also <span className={`${practicalColor} fw-bold`}>practical</span> and{" "}
-              <span className={`${practicalColor} fw-bold`}>empathic</span>,
-              so I'll also be the dev giving you{" "}
-              <span className={`${practicalColor2} fw-bold`}>that shortcut</span>{" "}
-              for the <span className={`${practicalColor} fw-bold`}>potion you use the most</span>{" "}
-              or those <span className={`${practicalColor2} fw-bold`}>filters
-                you'd love to have</span> on the app you use everyday.
+              I love <span className={`${logicColor} fw-bold`}>organization</span> and{" "}
+              <span className={`${logicColor} fw-bold`}>practicality</span>,
+              so I'll be happy <span className={`${logicColor} fw-bold`}>designing classes</span> and{" "}
+              giving you <span className={`${logicColor} fw-bold`}>that shortcut</span> and{" "}
+              <span className={`${logicColor} fw-bold`}>that filter</span> you need.
             </p>
           </div>
         </div>
