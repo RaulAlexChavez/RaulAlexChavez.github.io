@@ -52,18 +52,6 @@
     margin-bottom: 0.2vw;
 }
 
-.gear-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 14vw;
-    height: 14vw;
-    margin: auto;
-    margin-top: 1vw;
-    margin-bottom: -12.2vw;
-    padding: 0;
-}
-
 .z10 {
     z-index: 10;
     position: relative;

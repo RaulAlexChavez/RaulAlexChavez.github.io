@@ -4,6 +4,7 @@ import "./components/Navbar.css";
 import { Routes, Route } from "react-router-dom";
 import { DotNet } from "./routes";
 import { GameDev } from "./routes";
+import { WebDev } from "./routes";
 import { Navbar } from './components';
 import { Contact } from './components';
 import React, { ReactNode } from 'react';
@@ -16,7 +17,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/dotnet" element={<DotNet />} />
 				<Route path="/gamedev" element={<GameDev />} />
-				<Route path="/webdev" element={<GameDev />} />
+				<Route path="/webdev" element={<WebDev />} />
 			</Routes>
 		);
 	}

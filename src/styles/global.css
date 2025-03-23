@@ -45,6 +45,18 @@ body {
     box-shadow: 0 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.3);
 }
 
+.gear-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14vw;
+    height: 14vw;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: -12.2vw;
+    padding: 0;
+}
+
 .yellow-fg { color: #fddf68; }
 .cyan-fg { color: #0fe4ab; }
 .red-fg { color: #c0392b; }

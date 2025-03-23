@@ -2,29 +2,7 @@ import React from "react";
 import "../styles/global.css";
 import "./DotNet.css";
 import { Link } from "react-router-dom";
-
-interface CertificateCardProps {
-  title: string,
-  image: string
-  link?: string
-}
-
-const CertificateCard = (props: CertificateCardProps):JSX.Element => {
-  const cardContent = (
-    <div className="certification-card">
-      <img className="certification-img" src={props.image}></img>
-      <p className="certification-title">{props.title}</p>
-    </div>
-  );
-
-  const withLink = (
-    <Link style={{textDecoration: "None"}} to={props.link ?? ""} target="_blank">
-      {cardContent}
-    </Link>
-  );
-
-  return props.link ? withLink : cardContent;
-}
+import { CertificateCard } from "../components";
 
 function DotNet() {
   const mainColorStyle = { color: "#AA60CC", fontWeight: "bold" };
@@ -36,7 +14,7 @@ function DotNet() {
 
         <div className="intro">
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg" alt="My Name" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
+            <img src="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg" alt="C#" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
             <div className="text-start">
               <p>
                 I started using <span style={mainColorStyle}>.NET</span> at <span style={mainColorStyle}>university</span>, and since I knew about its <span style={mainColorStyle}>high demanded</span>, I have been going further with various <span style={mainColorStyle}>courses</span>.

@@ -3,6 +3,7 @@ import "./Home.css";
 import "../styles/global.css";
 import { HoverableRotation } from "../components";
 import { Link } from "react-router-dom";
+import {GameDevIcon} from "../components";
 
 interface SkillCardProps {
   title: string,
@@ -55,18 +56,11 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
   return props.link ? withLink : skillCard;
 }
 
-const GameDevIcon = () => {
-  return (
-    <div className="">
-      <div className="gear-container">
-        <div className="wrapper-rotating">
-          <img className="rotating" src={"images/gear.png"} alt={"engine"} style={{width: "100%", height: "100%"}}/>
-        </div>
-      </div>
-      <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-1vw"}}/>
-    </div>
-  );
-}
+const ReactRotation = (
+  <HoverableRotation rotatingClassName="react-rotate" rotateOnHoverClassName="" hoverableParent="" rotateSpeed={0.7/10} rotateOnHoverExtraSpeed={1.2/10}>
+    <img className="react-rotate" src="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png" alt="React" style={{ width: '14vw', height: '14vw'}} />
+  </HoverableRotation>
+)
 
 function Home() {
   const logicColor = "yellow-fg";
@@ -105,15 +99,17 @@ function Home() {
         <SkillCard
           bgColor="#003300"
           experience="3y+"
-          imageComponent={<GameDevIcon/>}
+          imageComponent={<GameDevIcon type="1"/>}
           title="Game Dev"
           skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
+          link="/gamedev"
         />
         <SkillCard
           experience="1y+"
-          image="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png"
+          imageComponent={ReactRotation}
           title="Web Dev"
           skills={["React", "Next", "Mongo", "SQL", "JS", "Bootstrap",  "TypeScript", "HTML"]}  
+          link="/webdev"
         />
       </div>
 

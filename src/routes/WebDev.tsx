@@ -1,17 +1,19 @@
 import React from "react";
-import { CertificateCard, GameDevIcon } from "../components";
+import { CertificateCard, HoverableRotation } from "../components";
 
-function GameDev() {
-  const mainColorStyle = { color: "#22CC22", fontWeight: "bold" };
+function WebDev() {
+  const mainColorStyle = { color: "#00bcd4", fontWeight: "bold" };
   return (
     <>
       <div className="text-center" style={{ marginTop: "1vw", marginBottom: "2vw" }}>
 
-        <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Game Development</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
+        <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Web Development</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
 
         <div className="intro">
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <GameDevIcon type="2" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }}/>
+            <HoverableRotation rotatingClassName="react-rotate" rotateOnHoverClassName="" hoverableParent="" rotateSpeed={0.7/10} rotateOnHoverExtraSpeed={1.2/10}>
+              <img className="react-rotate" src="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png" alt="React" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
+            </HoverableRotation>
             <div className="text-start">
               <p>
                 I started using <span style={mainColorStyle}>.NET</span> at <span style={mainColorStyle}>university</span>, and since I knew about its <span style={mainColorStyle}>high demanded</span>, I have been going further with various <span style={mainColorStyle}>courses</span>.
@@ -57,4 +59,4 @@ function GameDev() {
     </>
   );
 }
-export default GameDev;
+export default WebDev;
