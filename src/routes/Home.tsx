@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import "../styles/global.css";
 import { HoverableRotation } from "../components";
+import { Link } from "react-router-dom";
 
 interface SkillCardProps {
   title: string,
@@ -9,12 +10,13 @@ interface SkillCardProps {
   imageComponent?: JSX.Element,
   experience?: string,
   bgColor?: string,
-  skills: string[]
-  width?: string
+  skills: string[],
+  width?: string,
+  link?: string
 }
 
 const SkillCard = (props: SkillCardProps):JSX.Element => {
-  return (
+  const skillCard = (
     <HoverableRotation
       rotatingClassName="rotating"
       rotateOnHoverClassName="wrapper-rotating"
@@ -39,6 +41,18 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
       </div>
     </HoverableRotation>
   );
+
+  const withLink = (
+    <Link 
+      style={{ textDecoration: "None" }} 
+      to={props.link ?? ""} 
+      onClick={() => window.scrollTo(0, 0)}
+    >
+      {skillCard}
+    </Link>
+  )
+
+  return props.link ? withLink : skillCard;
 }
 
 const GameDevIcon = () => {
@@ -86,6 +100,7 @@ function Home() {
           title=".NET"
           skills={["ASP.NET", "MVC", "Blazor", "Web API", "Entity Framework", "Unit Testing"]}  
           width="53%"
+          link="/dotnet"
         />
         <SkillCard
           bgColor="#003300"

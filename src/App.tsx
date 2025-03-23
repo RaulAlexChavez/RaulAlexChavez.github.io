@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { DotNet } from "./routes";
 import { GameDev } from "./routes";
 import { Navbar } from './components';
+import { Contact } from './components';
 import React, { ReactNode } from 'react';
 import Home from './routes/Home';
 
@@ -27,6 +28,9 @@ function App() {
 			</div>
 			<div className='main-app-container'>
 				<MainApp />
+			</div>
+			<div>
+				<Contact/>
 			</div>
 		</>
 	);

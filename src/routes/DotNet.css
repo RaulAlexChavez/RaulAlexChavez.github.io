@@ -1,0 +1,27 @@
+.certification-card {
+    width: 37vw;
+    height: 31vw;
+    margin: 0.8vw;
+    background-color: #d9e0e8;
+    border-radius: 0.5vw;
+    box-shadow: 0 0 1vw 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+}
+
+.certification-card:hover {
+    transform: scale(1.05);
+}
+
+.certification-img {
+    padding-top: 0.8vw;
+    width: 35vw;
+    height: auto;
+}
+
+.certification-title {
+    font-size: 1.45vw;
+    color: #01304e;
+    font-weight: 700;
+    font-style: italic;
+    padding-top: 0.3vw;
+}
