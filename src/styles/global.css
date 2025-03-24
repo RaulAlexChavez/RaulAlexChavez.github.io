@@ -57,6 +57,19 @@ body {
     padding: 0;
 }
 
+.small-icon {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+}
+
+.small-icon:hover {
+    cursor: default;
+    transform: scale(1.2);
+}
+
 .yellow-fg { color: #fddf68; }
 .cyan-fg { color: #0fe4ab; }
 .red-fg { color: #c0392b; }

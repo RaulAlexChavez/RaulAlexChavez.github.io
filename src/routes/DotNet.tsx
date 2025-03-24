@@ -45,7 +45,7 @@ function DotNet() {
             link="https://platzi.com/p/rachavez/curso/7995-unit-testing-csharp/diploma/detalle/"
           />
           <CertificateCard
-            title="A must have for version-control"
+            title="A must-have for version-control"
             image="certificates/git-github.jpg"
             link="https://platzi.com/p/rachavez/curso/1557-git-github/diploma/detalle/"
           />

@@ -2,59 +2,7 @@ import React from "react";
 import "./Home.css";
 import "../styles/global.css";
 import { HoverableRotation } from "../components";
-import { Link } from "react-router-dom";
-import {GameDevIcon} from "../components";
-
-interface SkillCardProps {
-  title: string,
-  image?: string,
-  imageComponent?: JSX.Element,
-  experience?: string,
-  bgColor?: string,
-  skills: string[],
-  width?: string,
-  link?: string
-}
-
-const SkillCard = (props: SkillCardProps):JSX.Element => {
-  const skillCard = (
-    <HoverableRotation
-      rotatingClassName="rotating"
-      rotateOnHoverClassName="wrapper-rotating"
-      hoverableParent="skillset-card"
-      rotateSpeed={0.5/10}
-      rotateOnHoverExtraSpeed={1.2/10}
-    >
-      <div className="skillset-card" style={{backgroundColor: props.bgColor ?? "#1e1e1e"}}>
-        <div className="skillset-card-title">{props.title}</div>
-        {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} style={{width: props.width ?? "60%"}}/>}
-        <div className="skillset-card-content">
-          {props.experience ?
-            <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw" }}>{props.experience} XP</span>
-            : null
-          }
-          <div>
-            {props.skills.map((skill, index) => (
-              <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </HoverableRotation>
-  );
-
-  const withLink = (
-    <Link 
-      style={{ textDecoration: "None" }} 
-      to={props.link ?? ""} 
-      onClick={() => window.scrollTo(0, 0)}
-    >
-      {skillCard}
-    </Link>
-  )
-
-  return props.link ? withLink : skillCard;
-}
+import {GameDevIcon, SkillCard} from "../components";
 
 const ReactRotation = (
   <HoverableRotation rotatingClassName="react-rotate" rotateOnHoverClassName="" hoverableParent="" rotateSpeed={0.7/10} rotateOnHoverExtraSpeed={1.2/10}>
