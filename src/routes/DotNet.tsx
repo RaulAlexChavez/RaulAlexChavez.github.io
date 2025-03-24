@@ -17,6 +17,7 @@ function DotNet() {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzemPW2zVigKv44mjIDfGwrf_Rgzcyu07m_A&s",
         "https://upload.wikimedia.org/wikipedia/commons/d/d0/Blazor.png",
         "https://avatars.githubusercontent.com/u/2092016?s=280&v=4",
+        "",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
         "https://img.icons8.com/?size=512&id=34886&format=png",

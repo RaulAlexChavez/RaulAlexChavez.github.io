@@ -1,13 +1,36 @@
 import React from "react";
-import { CertificateCard, HoverableRotation } from "../components";
+import { CertificateCard, HoverableRotation, IconsRow, SkillCard } from "../components";
 
 function WebDev() {
   const mainColorStyle = { color: "#00bcd4", fontWeight: "bold" };
+
+  const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {
+    return <span style={{...mainColorStyle, ...props.style}}>{props.children}</span>;
+  }
+
   return (
     <>
       <div className="text-center" style={{ marginTop: "1vw", marginBottom: "2vw" }}>
 
         <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Web Development</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
+
+        <IconsRow iconsImagesPath={[
+          "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png",
+          "images/html-5.png",
+          "images/css-3.png",
+          "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+          "https://v5.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png",
+          "https://img.icons8.com/fluent/512/nextjs.png",
+          "https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png",
+          "https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png",
+          "https://www.svgrepo.com/show/331488/mongodb.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png",
+          "",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
+          "https://img.icons8.com/?size=512&id=34886&format=png",
+          "",
+        ]}/>
 
         <div className="intro">
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -16,47 +39,75 @@ function WebDev() {
             </HoverableRotation>
             <div className="text-start">
               <p>
-                I started using <span style={mainColorStyle}>.NET</span> at <span style={mainColorStyle}>university</span>, and since I knew about its <span style={mainColorStyle}>high demanded</span>, I have been going further with various <span style={mainColorStyle}>courses</span>.
+                <Cool>Web Development</Cool> is needed <Cool>everywhere</Cool>. I'm on my way to become a great <Cool>full-stack developer</Cool> so I can be <Cool>useful everywhere</Cool>.
               </p>
               <p>
-                I have <span style={mainColorStyle}>great proficiency</span> with <span style={mainColorStyle}>C#</span> in general, from <span style={mainColorStyle}>Unity</span> and from <span style={mainColorStyle}>.NET</span>. I have practiced my skills by my own and I would love to apply them in a <span style={mainColorStyle}>professional environment</span>.
+                My strength is <Cool>React</Cool>, and I have solid basis for <Cool>HTML</Cool>, <Cool>CSS</Cool>, <Cool>JS</Cool> and <Cool>SQL</Cool>. I have used <Cool>Express.js</Cool>, <Cool>MongoDB</Cool>, <Cool>REST</Cool>, <Cool>Flask</Cool>, among other technologies.
               </p>
             </div>
           </div>
+        </div>
+
+        <h1 className="super-title">📜 Experience</h1>
+
+        <div className="skillset-card-group">
+          <SkillCard
+            experience="Yes, this one!"
+            xpNoAdd
+            bgColor="#79fefc"
+            image="images/my-page.jpg"
+            title="My personal page!"
+            titleStyle={{fontSize: "2vw", color: "#000"}}
+            description="This very page has been built from scratch with React, Bootstrap and very much love! It's uploaded to GitHub Pages."
+            descriptionStyle={{color: "#000"}}
+            width="100%"
+            link="https://github.com/RaulAlexChavez/RaulAlexChavez.github.io"
+            linkTargetBlank
+          />
+          <SkillCard
+            bgColor="#f5f5f5"
+            experience="Gebar Technologies [1y]"
+            xpNoAdd
+            image="https://www.gebartech.com/web/image/website/1/logo/Gebar%20Technologies?unique=ff963d5"
+            width="55%"
+            title="Jr IT Consultant"
+            titleStyle={{fontSize: "2vw", color: "#000"}}
+            description="I provided updates to the web system of a VISA agency based on their direct feedback, increasing notably the productivity of the team. Worked with Next.js. MongoDB, Express and more, under Azure."
+            descriptionStyle={{color: "#000"}}
+            link="https://www.gebartech.com/"
+            linkTargetBlank
+          />
+          <SkillCard
+            bgColor="#104010"
+            experience="Computational Systems Eng."
+            xpNoAdd
+            image="https://citecuvp.tij.uabc.mx/wp-content/uploads/2022/10/ISOTIPO-UABC-COLORORIGINAL.png"
+            width="100%"
+            title="University Projects"
+            titleStyle={{fontSize: "2vw"}}
+            description="I worked on many school projects with Web Dev, frontend and backend. I learned a lot about the Software Lyfe Cycle and Project Managment."
+            link="https://ingenieria.mxl.uabc.mx/pe_lsc/mapa-curricular-2009-2/"
+            linkTargetBlank
+          />
         </div>
 
         <h1 className="super-title">📜 Qualifications</h1>
 
         <div className="card-group">
           <CertificateCard
-            title="Create APIs with REST for .NET"
-            image="certificates/apis-net.jpg"
-            link="https://platzi.com/p/rachavez/curso/2983-apis-net/diploma/detalle/"
+            title="Network basis, OSI model, TCP/IP"
+            image="certificates/redes.jpg"
+            link="https://platzi.com/p/rachavez/curso/2225-course/diploma/detalle/"
           />
           <CertificateCard
-            title="ORM, EF, Minimal API, Fluent API, Migrations"
-            image="certificates/entity-framework.jpg"
-            link="https://platzi.com/p/rachavez/curso/2987-entity-framework/diploma/detalle/"
-          />
-          <CertificateCard
-            title="Unit testing for C# apps with xUnit"
-            image="certificates/unit-testing-csharp.jpg"
-            link="https://platzi.com/p/rachavez/curso/7995-unit-testing-csharp/diploma/detalle/"
+            title="PHP basis and composer"
+            image="certificates/php-composer.jpg"
+            link="https://platzi.com/p/rachavez/curso/2024-course/diploma/detalle/"
           />
           <CertificateCard
             title="A must-have for version-control"
             image="certificates/git-github.jpg"
             link="https://platzi.com/p/rachavez/curso/1557-git-github/diploma/detalle/"
-          />
-          <CertificateCard
-            title="Placeholder"
-            image="certificates/diseno-videojuegos.jpg"
-            link="https://platzi.com/p/rachavez/curso/1783-course/diploma/detalle/"
-          />
-          <CertificateCard
-            title="The basis. One must start somewhere, right?"
-            image="certificates/fundamentos-net.jpg"
-            link="https://platzi.com/p/rachavez/curso/2883-fundamentos-net/diploma/detalle/"
           />
         </div>
 

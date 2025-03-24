@@ -39,7 +39,7 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
           }
           {props.description ?
             <div>
-                <p style={props.descriptionStyle ?? { fontSize: "1.3vw"}}>{props.description}</p>
+                <p style={{...props.descriptionStyle??{}, fontSize: "1.3vw"}}>{props.description}</p>
             </div>
             : null
           }
@@ -47,7 +47,7 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
             props.skills ?
             <div>
                 {props.skills.map((skill, index) => (
-                <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
+                  <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
                 ))}
             </div>
             : null
@@ -57,12 +57,24 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
     </HoverableRotation>
   );
 
+  const handleScroll = (e:any, id:string) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const withLink = (
     <Link 
       style={{ textDecoration: "None" }} 
       to={props.link ?? ""}
       target={props.linkTargetBlank ? "_blank" : ""}
-      onClick={props.linkTargetBlank ? () => {} : () => window.scrollTo(0, 0)}
+      onClick={
+        props.link?.toString().includes("#") ? (e) => handleScroll(e, props.link!.toString().split("#")[1]) : (
+          props.linkTargetBlank ? () => {} : () => window.scrollTo(0, 0)
+        )
+      }
     >
       {skillCard}
     </Link>

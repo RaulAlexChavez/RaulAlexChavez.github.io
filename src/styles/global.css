@@ -28,7 +28,7 @@ body {
     font-size: 4vw;
     font-weight: 700;
     margin: 0;
-    margin-top: 2vw;
+    margin-top: 1.8vw;
     margin-bottom: 2vw;
     padding: 0;
 }
@@ -58,7 +58,7 @@ body {
 }
 
 .small-icon {
-    width: 3.8vw;
+    width: auto;
     height: 3.8vw;
     margin: 0;
     transition: 0.4s;

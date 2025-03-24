@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/global.css";
 import US from "country-flag-icons/react/3x2/US";
-import MX from "country-flag-icons/react/3x2/MX";
 import FR from "country-flag-icons/react/3x2/FR";
 import { Link } from "react-router-dom";
 
@@ -13,9 +12,9 @@ interface LanguageLevelProps {
 
 const LanguageLevel = (props: LanguageLevelProps): JSX.Element => {
     const starStyle: React.CSSProperties = { fontSize: '3vw', fontWeight: 'bold', color: '#dddd00'};
-    const star = <p className="bi-star" style={starStyle}></p>;
-    const starFill = <p className="bi-star-fill" style={starStyle}></p>;
-    const starHalf = <p className="bi-star-half" style={starStyle}></p>;
+    const star = <p className="bi-star scale-on-hover-1-1" style={starStyle}></p>;
+    const starFill = <p className="bi-star-fill scale-on-hover-1-1" style={starStyle}></p>;
+    const starHalf = <p className="bi-star-half scale-on-hover-1-1" style={starStyle}></p>;
     const stars = [];
 
     let totalStars = 0;
@@ -53,7 +52,7 @@ const Contact: React.FC = () => {
                     <LanguageLevel filledStars={3} halfStars={1} flag={<FR className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
                 </div>
                 <div style={{ ...columnStyle, display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: "-1vw" }} className="text-center align-items-center">
-                    <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}(+52 )686 542 1369</p>
+                    <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}(+52) 686 542 1369</p>
                     <p className="bi-envelope fw-bold super-title" style={bigTextStyle}>{" "}chavezra.work@gmail.com</p>
                     <Link className="bi-linkedin fw-bold super-title" style={bigTextStyle} to={"https://www.linkedin.com/in/raulalexchavez/"} target="_blank">{" "}RaulAlexChavez</Link>
                 </div>

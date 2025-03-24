@@ -17,6 +17,7 @@ function GameDev() {
       <IconsRow iconsImagesPath={[
         "https://cdn-icons-png.flaticon.com/512/5969/5969346.png",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png",
+        "",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
         "https://img.icons8.com/?size=512&id=34886&format=png",
@@ -41,13 +42,14 @@ function GameDev() {
 
         <div className="skillset-card-group">
           <SkillCard
-            experience="BC Media Lab"
+            experience="BC Media Lab [2y]"
             xpNoAdd
             bgColor="#bb420c"
             image="images/bcml.png"
             title="Game Programmer"
             titleStyle={{fontSize: "2vw"}}
-            description="I worked 2 years (2021-2023) with a small team under SCRUM-ban. I was responsible for systems such as the multiplayer, combat stats, save system, and more."
+            description="I worked (2021-2023) in a mexican beat'em up game with a small team under SCRUM-ban. I was responsible for systems such as the multiplayer, combat stats, save system, and more."
+            descriptionStyle={{fontSize: "1.3vw"}}
             width="53%"
             link="https://www.bcmedialab.com/"
             linkTargetBlank
@@ -96,7 +98,7 @@ function GameDev() {
             width="60%"
             title="Grid Admin"
             titleStyle={{fontSize: "1.7vw"}}
-            description="A decision making game, mobile compatible, themed around the software industry."
+            description="A decision making game themed around the software industry. Mobile compatible."
             descriptionStyle={{fontSize: "1.2vw"}}
             link="https://delphoenyx.itch.io/grid-admin"
             linkTargetBlank
@@ -109,7 +111,7 @@ function GameDev() {
             width="100%"
             title="DDB Teaching Tool"
             titleStyle={{fontSize: "1.7vw"}}
-            description="A tool to aid teaching some specific topics DDB. Made with Unity (not a game, though)"
+            description="A tool to aid teaching some specific topics of Distributed Data Bases. Made with Unity (not a game, though)"
             link="https://delphoenyx.itch.io/bdd-fv"
             linkTargetBlank
           />
