@@ -61,13 +61,38 @@ body {
     width: 3.8vw;
     height: 3.8vw;
     margin: 0;
-    padding: 0;
     transition: 0.4s;
+    padding: 0;
 }
 
 .small-icon:hover {
     cursor: default;
+    filter: drop-shadow(0.3vw 0.3vw 0.3vw #000);
     transform: scale(1.2);
+}
+
+.scale-on-hover-1-1 {
+    transition: 0.4s;
+}
+
+.scale-on-hover-1-1:hover {
+    transform: scale(1.1);
+}
+
+.shadow-on-hover img {
+    transition: 0.4s;
+}
+
+.shadow-on-hover:hover img {
+    filter: drop-shadow(0.3vw 0.3vw 0.3vw #000);
+}
+
+.shadow-on-hover {
+    transition: 0.4s;
+}
+
+.shadow-on-hover:hover {
+    filter: drop-shadow(0.3vw 0.3vw 0.3vw #000);
 }
 
 .yellow-fg { color: #fddf68; }

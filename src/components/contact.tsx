@@ -48,12 +48,12 @@ const Contact: React.FC = () => {
         <div style={{ marginTop: '2vw', margin: '0 3vw 0 3vw', borderTop: '3px solid #ccc', textAlign: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5vw' }}>
                 <div style={columnStyle} className="text-center align-items-center">
-                    <LanguageLevel filledStars={5} halfStars={0} flag={<img src="images/mexico-flag.jpeg" style={{...flagStyle, height: "4.4vw"}}/>} />
-                    <LanguageLevel filledStars={4} halfStars={1} flag={<US style={flagStyle}/>} />
-                    <LanguageLevel filledStars={3} halfStars={1} flag={<FR style={flagStyle}/>} />
+                    <LanguageLevel filledStars={5} halfStars={0} flag={<img className="shadow-on-hover scale-on-hover-1-1" src="images/mexico-flag.jpeg" style={{...flagStyle, height: "4.4vw"}}/>} />
+                    <LanguageLevel filledStars={4} halfStars={1} flag={<US className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
+                    <LanguageLevel filledStars={3} halfStars={1} flag={<FR className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
                 </div>
                 <div style={{ ...columnStyle, display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: "-1vw" }} className="text-center align-items-center">
-                    <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}686 542 1369</p>
+                    <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}(+52 )686 542 1369</p>
                     <p className="bi-envelope fw-bold super-title" style={bigTextStyle}>{" "}chavezra.work@gmail.com</p>
                     <Link className="bi-linkedin fw-bold super-title" style={bigTextStyle} to={"https://www.linkedin.com/in/raulalexchavez/"} target="_blank">{" "}RaulAlexChavez</Link>
                 </div>

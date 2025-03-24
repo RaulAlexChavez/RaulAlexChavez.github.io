@@ -20,7 +20,7 @@ function GameDev() {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
         "https://img.icons8.com/?size=512&id=34886&format=png",
-
+        "",
       ]}/>
 
         <div className="intro">

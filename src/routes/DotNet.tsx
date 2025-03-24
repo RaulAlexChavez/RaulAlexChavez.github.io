@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/global.css";
 import "./DotNet.css";
 import { Link } from "react-router-dom";
-import { CertificateCard } from "../components";
+import { CertificateCard, IconsRow } from "../components";
 
 function DotNet() {
   const mainColorStyle = { color: "#AA60CC", fontWeight: "bold" };
@@ -11,6 +11,18 @@ function DotNet() {
       <div className="text-center" style={{ marginTop: "1vw", marginBottom: "2vw" }}>
 
         <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>DotNet</span>{" development "}<span className="light-blue-fg fw-bold">{">"}</span></h1>
+
+        <IconsRow iconsImagesPath={[
+        "https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzemPW2zVigKv44mjIDfGwrf_Rgzcyu07m_A&s",
+        "https://upload.wikimedia.org/wikipedia/commons/d/d0/Blazor.png",
+        "https://avatars.githubusercontent.com/u/2092016?s=280&v=4",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
+        "https://img.icons8.com/?size=512&id=34886&format=png",
+        "",
+
+      ]}/>
 
         <div className="intro">
           <div style={{ display: 'flex', alignItems: 'center' }}>
