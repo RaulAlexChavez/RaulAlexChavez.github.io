@@ -48,7 +48,7 @@ function WebDev() {
           </div>
         </div>
 
-        <h1 className="super-title">📜 Experience</h1>
+        <h1 className="super-title">💡 Experience</h1>
 
         <div className="skillset-card-group">
           <SkillCard

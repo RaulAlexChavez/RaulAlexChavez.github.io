@@ -100,7 +100,7 @@ function Home() {
         />
       </div>
 
-      <h1 className="super-title">🎓 Studies</h1>
+      <h1 id="studies" className="super-title">🎓 Studies</h1>
       
       <div className="skillset-card-group">
         <SkillCard
@@ -141,7 +141,7 @@ function Home() {
         />
       </div>
 
-      <h1 className="super-title">💻 More skills</h1>
+      <h1 id="more-skills" className="super-title">💻 More skills</h1>
 
       <div className="skillset-card-group">
         <SkillCard
@@ -206,7 +206,7 @@ function Home() {
         />
       </div>
 
-      <h1 className="super-title">💡 About Me</h1>
+      <h1 id="about-me" className="super-title">✨ About Me</h1>
 
       <div className="skillset-card-group">
         <SkillCard
@@ -261,3 +261,4 @@ function Home() {
 export default Home;
 
 // TODO: Make responsibe to Mobile
+// TODO: Handle scroll refactor: component for utils
