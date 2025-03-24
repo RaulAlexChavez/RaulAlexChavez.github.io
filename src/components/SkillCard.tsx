@@ -16,6 +16,7 @@ interface SkillCardProps {
   link?: string,
   titleStyle?: React.CSSProperties,
   description?: string,
+  descriptionComponent?: JSX.Element,
   descriptionStyle?: React.CSSProperties,
   linkTargetBlank?: boolean
 }
@@ -35,6 +36,12 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
         <div className="skillset-card-content">
           {props.experience ?
             <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw"}}>{props.experience} {props.xpNoAdd ? "" : "XP"}</span>
+            : null
+          }
+          {props.descriptionComponent ?
+            <div>
+                {props.descriptionComponent}
+            </div>
             : null
           }
           {props.description ?

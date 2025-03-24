@@ -3,6 +3,7 @@ import React from "react";
 interface IconsRowProps {
     iconsImagesPath: string[],
     iconClickLink?: string,
+    style?: React.CSSProperties
 }
 
 const IconsRow = (props: IconsRowProps) : JSX.Element => {
@@ -15,7 +16,7 @@ const IconsRow = (props: IconsRowProps) : JSX.Element => {
     };
 
     return (
-        <div style={{width: "75%", margin: "auto"}}>
+        <div style={{width: "75%", margin: "auto", ...(props.style ?? {})}}>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1.5vw", margin: "-1vw 0 1.5vw 0" }}>
                 {props.iconsImagesPath.map((iconPath, index): JSX.Element => {
                     if (!iconPath) {return <></>}
