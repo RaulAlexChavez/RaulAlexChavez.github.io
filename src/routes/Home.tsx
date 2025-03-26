@@ -116,7 +116,7 @@ function Home() {
           xpNoAdd
           image="images/ai.png"
           title="AI"
-          skills={["Basic / Intermediate", "Kids / Teens / Adults", "Programming", "Math"]}  
+          skills={["Python", "OpenAI API", "ChatGPT", "Prompt Engineering", "Fine-tuning"]}  
           pillBgColor="bg-primary"
           link="/ai"
         />
