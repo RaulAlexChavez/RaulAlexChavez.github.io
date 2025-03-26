@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/global.css";
 import "./components/Navbar.css";
 import { Routes, Route } from "react-router-dom";
-import { DotNet } from "./routes";
+import { AI, DotNet, Tutoring } from "./routes";
 import { GameDev } from "./routes";
 import { WebDev } from "./routes";
 import { Navbar } from './components';
@@ -18,6 +18,8 @@ function App() {
 				<Route path="/dotnet" element={<DotNet />} />
 				<Route path="/gamedev" element={<GameDev />} />
 				<Route path="/webdev" element={<WebDev />} />
+				<Route path="/tutoring" element={<Tutoring />} />
+				<Route path="/ai" element={<AI />} />
 			</Routes>
 		);
 	}

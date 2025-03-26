@@ -2,7 +2,7 @@ import React from "react";
 import { CertificateCard, HoverableRotation, IconsRow, SkillCard } from "../components";
 
 function WebDev() {
-  const mainColorStyle = { color: "#00bcd4", fontWeight: "bold" };
+  const mainColorStyle = { color: "#3397e8", fontWeight: "bold" };
 
   const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {
     return <span style={{...mainColorStyle, ...props.style}}>{props.children}</span>;
@@ -12,7 +12,7 @@ function WebDev() {
     <>
       <div className="text-center" style={{ marginTop: "1vw", marginBottom: "2vw" }}>
 
-        <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Web Development</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
+        <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Tutoring</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
 
         <IconsRow iconsImagesPath={[
           "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png",
@@ -34,9 +34,7 @@ function WebDev() {
 
         <div className="intro">
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <HoverableRotation rotatingClassName="react-rotate" rotateOnHoverClassName="" hoverableParent="" rotateSpeed={0.7/10} rotateOnHoverExtraSpeed={1.2/10}>
-              <img className="react-rotate" src="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png" alt="React" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
-            </HoverableRotation>
+            <img className="react-rotate" src="images/teach.png" alt="Tutoring" style={{ width: '10vw', height: '10vw', marginRight: '3vw' }} />
             <div className="text-start">
               <p>
                 <Cool>Web Development</Cool> is needed <Cool>everywhere</Cool>. I'm on my way to become a great <Cool>full-stack developer</Cool> so I can be <Cool>useful everywhere</Cool>.

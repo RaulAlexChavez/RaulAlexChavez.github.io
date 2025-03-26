@@ -21,9 +21,10 @@ const IconsRow = (props: IconsRowProps) : JSX.Element => {
                 {props.iconsImagesPath.map((iconPath, index): JSX.Element => {
                     if (!iconPath) {return <></>}
                     let altText = (iconPath.split("/").pop() || "").split(".")[0];
-                    return <img src={iconPath} alt={altText} className="small-icon"
-                    onClick={
-                        props.iconClickLink?.toString().includes("#") ? (e) => handleScroll(e, props.iconClickLink!.toString().split("#")[1]) : () => {}
+                    return<img src={iconPath} alt={altText} className="small-icon"
+                        style={{borderRadius: "8%"}}
+                        onClick={
+                            props.iconClickLink?.toString().includes("#") ? (e) => handleScroll(e, props.iconClickLink!.toString().split("#")[1]) : () => {}
                       }/>
                 })}
             </div>

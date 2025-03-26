@@ -44,8 +44,8 @@ const Contact: React.FC = () => {
     const flagStyle = { width: '6.5vw', height: '6.5vw', marginTop: '-0.5vw' };
     
     return (
-        <div style={{ marginTop: '2vw', margin: '0 3vw 0 3vw', borderTop: '3px solid #ccc', textAlign: 'center' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5vw' }}>
+        <div style={{ marginTop: '5vw', margin: '0 3vw 0 3vw', borderTop: '3px solid #ccc', textAlign: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5vw', marginTop: '3vw' }}>
                 <div style={columnStyle} className="text-center align-items-center">
                     <LanguageLevel filledStars={5} halfStars={0} flag={<img className="shadow-on-hover scale-on-hover-1-1" src="images/mexico-flag.jpeg" style={{...flagStyle, height: "4.4vw"}}/>} />
                     <LanguageLevel filledStars={4} halfStars={1} flag={<US className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />

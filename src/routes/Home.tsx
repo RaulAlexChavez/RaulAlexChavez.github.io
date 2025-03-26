@@ -75,7 +75,7 @@ function Home() {
 
       <div className="skillset-card-group">
         <SkillCard
-          experience="1y"
+          experience="2y"
           bgColor="#402560"
           image="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg"
           title=".NET"
@@ -84,19 +84,41 @@ function Home() {
           link="/dotnet"
         />
         <SkillCard
-          bgColor="#003300"
-          experience="3y+"
+          bgColor="#004000"
+          experience="4y+"
           imageComponent={<GameDevIcon type="1"/>}
           title="Game Dev"
           skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
           link="/gamedev"
         />
         <SkillCard
-          experience="1y+"
+          bgColor="#222222"
+          experience="2y+"
           imageComponent={ReactRotation}
           title="Web Dev"
           skills={["React", "Next", "Mongo", "SQL", "JS", "Bootstrap",  "TypeScript", "HTML"]}  
           link="/webdev"
+        />
+        <SkillCard
+          bgColor="#3397e8"
+          experience="5y+"
+          image="images/teach.png"
+          title="Tutoring"
+          skills={["Basic / Intermediate", "Kids / Teens / Adults", "Programming", "Math"]}
+          pillBgColor="bg-light"
+          pillTextColor="text-dark"
+          link="/tutoring"
+        />
+        <SkillCard
+          bgColor="#660000"
+          experience="New!"
+          experiencePillColor="bg-danger"
+          xpNoAdd
+          image="images/ai.png"
+          title="AI"
+          skills={["Basic / Intermediate", "Kids / Teens / Adults", "Programming", "Math"]}  
+          pillBgColor="bg-primary"
+          link="/ai"
         />
       </div>
 
@@ -147,6 +169,7 @@ function Home() {
         <SkillCard
           bgColor="#106679"
           experience="Software Development Cycle"
+          experiencePillColor="bg-water"
           xpNoAdd
           image="https://cdn-icons-png.flaticon.com/512/4727/4727480.png"
           width="70%"
@@ -215,7 +238,7 @@ function Home() {
           image="images/me-cup-chocolate.jpg"
           title="Who am I?"
           titleStyle={{color: "#000"}}
-          description="I was bron in Mexico in the year 2000. I am a very social and curios person. I love to learn and to teach. I'm extroverted and I like helping others."
+          description="I was born in Mexico in the year 2000. I am a very social and curios person. I love to learn and to teach. I'm extroverted and I like helping others."
           descriptionStyle={{color: "#000"}}
           width="65%"
         />
@@ -253,12 +276,13 @@ function Home() {
       </div>
 
       <br/>
-      <br/>
       
     </div>
   );
 }
 export default Home;
 
+// TODO: Add Tutoring (orange)
 // TODO: Make responsibe to Mobile
 // TODO: Handle scroll refactor: component for utils
+// TODO: Change phone number

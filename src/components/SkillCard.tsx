@@ -18,7 +18,39 @@ interface SkillCardProps {
   description?: string,
   descriptionComponent?: JSX.Element,
   descriptionStyle?: React.CSSProperties,
-  linkTargetBlank?: boolean
+  linkTargetBlank?: boolean,
+  experiencePillColor?:
+      "bg-primary"
+    | "bg-secondary"
+    | "bg-success"
+    | "bg-danger"
+    | "bg-warning"
+    | "bg-info"
+    | "bg-light"
+    | "bg-dark"
+    | "bg-light"
+    | "bg-water",
+    
+  pillBgColor?:
+      "bg-primary"
+    | "bg-secondary"
+    | "bg-success"
+    | "bg-danger"
+    | "bg-warning"
+    | "bg-info"
+    | "bg-light"
+    | "bg-dark"
+    | "bg-light",
+  pillTextColor?:
+      "text-primary"
+    | "text-secondary"
+    | "text-success"
+    | "text-danger"
+    | "text-warning"
+    | "text-info"
+    | "text-light"
+    | "text-dark",
+
 }
 
 const SkillCard = (props: SkillCardProps):JSX.Element => {
@@ -35,7 +67,12 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
         {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} style={{width: props.width ?? "60%"}}/>}
         <div className="skillset-card-content">
           {props.experience ?
-            <span className="badge rounded-pill bg-primary" style={{ marginBottom: "1vw"}}>{props.experience} {props.xpNoAdd ? "" : "XP"}</span>
+            <span className={
+              "badge rounded-pill" + " " +
+              (props.experiencePillColor ?? "bg-primary")}
+              style={{ marginBottom: "1vw"}}>{props.experience}
+              {props.xpNoAdd ? "" : "XP"}
+            </span>
             : null
           }
           {props.descriptionComponent ?
@@ -54,7 +91,13 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
             props.skills ?
             <div>
                 {props.skills.map((skill, index) => (
-                  <span key={index} className="badge rounded-pill bg-secondary skill">{skill}</span>
+                  <span key={index}
+                    className={"badge rounded-pill skill" + " " +
+                      (props.pillBgColor ?? "bg-secondary") + " " +
+                      (props.pillTextColor ?? "text-light")}
+                    >
+                      {skill}
+                  </span>
                 ))}
             </div>
             : null
