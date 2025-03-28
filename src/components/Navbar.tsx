@@ -33,13 +33,13 @@ const Navbar = () => {
           <p className={`${iconClasses} bi-house`}/><p className={`${textClasses}`}>{`Home`}</p>
         </Link>
       </div>
-      <div><Link className={`${linkClasses}`} to="/dotnet" onClick={() => window.scrollTo(0, 0)}>
+      <div translate="no"><Link className={`${linkClasses}`} to="/dotnet" onClick={() => window.scrollTo(0, 0)}>
         <p className={`${iconClasses} bi-microsoft`}/><p className={`${textClasses}`}>{`.NET`}</p>
       </Link></div>
-      <div><Link className={`${linkClasses}`} to="/gamedev" onClick={() => window.scrollTo(0, 0)}>
+      <div translate="no"><Link className={`${linkClasses}`} to="/gamedev" onClick={() => window.scrollTo(0, 0)}>
         <p className={`${iconClasses} bi-controller`}/><p className={`${textClasses}`}>{`Game Dev`}</p>
       </Link></div>
-      <div><Link className={`${linkClasses}`} to="/webdev" onClick={() => window.scrollTo(0, 0)}>
+      <div translate="no"><Link className={`${linkClasses}`} to="/webdev" onClick={() => window.scrollTo(0, 0)}>
         <p className={`${iconClasses} bi-browser-chrome`}/><p className={`${textClasses}`}>{`Web Dev`}</p>
       </Link></div>
       <div><Link className={`${linkClasses}`} to="/tutoring" onClick={() => window.scrollTo(0, 0)}>

@@ -19,6 +19,7 @@ interface SkillCardProps {
   descriptionComponent?: JSX.Element,
   descriptionStyle?: React.CSSProperties,
   linkTargetBlank?: boolean,
+  dontTranslate?: boolean,
   experiencePillColor?:
       "bg-primary"
     | "bg-secondary"
@@ -62,7 +63,7 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
       rotateSpeed={0.5/10}
       rotateOnHoverExtraSpeed={1.2/10}
     >
-      <div className="skillset-card shadow-on-hover" style={{backgroundColor: props.bgColor ?? "#1e1e1e"}}>
+      <div className="skillset-card shadow-on-hover" style={{backgroundColor: props.bgColor ?? "#1e1e1e"}} translate={props.dontTranslate ? "no" : "yes"}>
         <div className="skillset-card-title" style={props.titleStyle ?? {}}>{props.title}</div>
         {props.imageComponent ? props.imageComponent : <img className="skillset-card-image" src={props.image} alt={props.title} style={{width: props.width ?? "60%"}}/>}
         <div className="skillset-card-content">

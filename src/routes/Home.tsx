@@ -82,6 +82,7 @@ function Home() {
           skills={["ASP.NET", "MVC", "Blazor", "Web API", "Entity Framework", "Unit Testing"]}  
           width="53%"
           link="/dotnet"
+          dontTranslate
         />
         <SkillCard
           bgColor="#004000"
@@ -90,6 +91,7 @@ function Home() {
           title="Game Dev"
           skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
           link="/gamedev"
+          dontTranslate
         />
         <SkillCard
           bgColor="#222222"
@@ -98,6 +100,7 @@ function Home() {
           title="Web Dev"
           skills={["React", "Next", "Mongo", "SQL", "JS", "Bootstrap",  "TypeScript", "HTML"]}  
           link="/webdev"
+          dontTranslate
         />
         <SkillCard
           bgColor="#3397e8"
@@ -119,6 +122,7 @@ function Home() {
           skills={["Python", "OpenAI API", "ChatGPT", "Prompt Engineering", "Fine-tuning"]}  
           pillBgColor="bg-primary"
           link="/ai"
+          dontTranslate
         />
       </div>
 
@@ -133,7 +137,7 @@ function Home() {
           width="100%"
           title=""
           titleStyle={{fontSize: "2vw"}}
-          description="I was awarded 4 times a top 1% semestral scholarship. I was part of the University Council, the Competitive Programming club and more. I learned a lot about Software Engineering, SDLC, CMMI, UML and Project Management."
+          description="I was awarded 4 times a top 1% scholarship. I was part of the University Council and the Competitive Programming Club. I learned a lot about Software Engineering, SDLC, CMMI, UML and Project Management."
           link="https://ingenieria.mxl.uabc.mx/pe_lsc/mapa-curricular-2009-2/"
           linkTargetBlank
         />
@@ -142,7 +146,7 @@ function Home() {
           xpNoAdd
           bgColor="#552020"
           image="https://cdn.countryflags.com/thumbs/spain/flag-400.png"
-          title="1 semester internship!"
+          title="1 exchange semester!"
           titleStyle={{fontSize: "1.85vw"}}
           description="Earned a scholarship to study in Spain. I learnt about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics."
           width="70%"
@@ -237,7 +241,7 @@ function Home() {
           bgColor="#FFaa99"
           image="images/me-cup-chocolate.jpg"
           title="Who am I?"
-          titleStyle={{color: "#000"}}
+          titleStyle={{color: "#000", fontSize: "2.5vw"}}
           description="I was born in Mexico in the year 2000. I am a very social and curious person. I love to learn and to teach. I'm extroverted and I like helping others."
           descriptionStyle={{color: "#000"}}
           width="65%"
