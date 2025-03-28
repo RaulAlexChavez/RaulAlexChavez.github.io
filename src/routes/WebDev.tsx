@@ -26,9 +26,9 @@ function WebDev() {
           "https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png",
           "https://www.svgrepo.com/show/331488/mongodb.svg",
           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png",
+          "https://static-00.iconduck.com/assets.00/php-icon-2048x2048-zjxns1zh.png",
           "",
           "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
-          "https://img.icons8.com/?size=512&id=34886&format=png",
           "",
         ]}/>
 

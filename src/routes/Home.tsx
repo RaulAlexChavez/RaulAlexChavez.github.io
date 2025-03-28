@@ -286,7 +286,5 @@ function Home() {
 }
 export default Home;
 
-// TODO: Change phone number
 // TODO: Tutoring 3+ testimonies 
 // TODO: Make responsibe to Mobile
-// TODO: Handle scroll refactor: component for utils
