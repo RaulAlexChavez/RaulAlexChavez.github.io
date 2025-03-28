@@ -9,6 +9,7 @@ import { Navbar } from './components';
 import { Contact } from './components';
 import React, { ReactNode } from 'react';
 import Home from './routes/Home';
+import { MetaTags } from './components';
 
 function App() {
 	const MainApp = (): JSX.Element => {
@@ -26,6 +27,12 @@ function App() {
 
 	return (
 		<>
+			<MetaTags
+				title="Raúl Alex Chávez"
+				description="Portfolio of a Software Engineer"
+				image="images/me.jpg"
+				url="https://raulalexchavez.github.io/"
+			/>
 			<div className='navbar-main-container position-fixed top-0 bottom-0 start-0'>
 				<Navbar />
 			</div>
