@@ -29,7 +29,7 @@ function Home() {
       
       <div className="intro">
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img className="shadow-custom" src="images/me-cup-chocolate.jpg" alt="My Name" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
+          <img className="shadow-custom shadow-on-hover scale-on-hover-1-1" src="images/me.jpg" alt="My Name" style={{ width: '12vw', height: '12vw', borderRadius: '40%', marginRight: '2vw'}} />
           <div className="text-start">
             <p>
               Hi, I'm <CoolOrg>Raul Alex Chavez</CoolOrg>, a passionate <CoolOrg>developer</CoolOrg> who loves <CoolOrg>making the life of people easier</CoolOrg>. I'm <CoolOrg>always learning</CoolOrg> and up to the challenge!
@@ -148,7 +148,7 @@ function Home() {
           image="https://cdn.countryflags.com/thumbs/spain/flag-400.png"
           title="1 exchange semester!"
           titleStyle={{fontSize: "1.85vw"}}
-          description="Earned a scholarship to study in Spain. I learnt about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics."
+          description="Earned a scholarship to study in Spain. I learned about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics. I had enriching cultural and language experiences with people from all over the world."
           width="70%"
           link="https://grados.ugr.es/ramas/ingenieria-arquitectura/grado-ingenieria-informatica"
           linkTargetBlank
@@ -239,7 +239,7 @@ function Home() {
         <SkillCard
           xpNoAdd
           bgColor="#FFaa99"
-          image="images/me-cup-chocolate.jpg"
+          image="images/me.jpg"
           title="Who am I?"
           titleStyle={{color: "#000", fontSize: "2.5vw"}}
           description="I was born in Mexico in the year 2000. I am a very social and curious person. I love to learn and to teach. I'm extroverted and I like helping others."
