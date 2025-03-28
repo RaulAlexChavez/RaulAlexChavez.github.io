@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import "../styles/global.css";
-import { HoverableRotation, IconsRow, MetaTags } from "../components";
+import { HoverableRotation, IconsRow } from "../components";
 import {GameDevIcon, SkillCard} from "../components";
 import US from "country-flag-icons/react/3x2/US";
 import FR from "country-flag-icons/react/3x2/FR";
@@ -25,12 +25,6 @@ function Home() {
     }
   return (
     <>
-      <MetaTags
-        title="Raúl Alex Chávez"
-        description="Portfolio of a Software Engineer"
-        image="images/me.jpg"
-        url="https://raulalexchavez.github.io/"
-      />
       <div className="text-center" style={{ marginTop: "1vw" }}>
         <h1 className="super-title">Welcome, <span className="light-blue-fg fw-bold">developer</span> !</h1>
         
