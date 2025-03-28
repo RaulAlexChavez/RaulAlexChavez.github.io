@@ -11,7 +11,7 @@ const CertificateCard = (props: CertificateCardProps):JSX.Element => {
   const cardContent = (
     <div className="certification-card">
       <img className="certification-img" src={props.image}></img>
-      <p className="certification-title">{props.title}</p>
+      <p className="certification-title" style={{padding: "0.3vw 0.3vw 0 0.3vw"}}>{props.title}</p>
     </div>
   );
 

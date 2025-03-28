@@ -157,7 +157,7 @@ function Home() {
           width="55%"
           title="Looking forward to do a Master's degree!"
           titleStyle={{fontSize: "2vw", color: "#000"}}
-          description="I Mexico or, even better, in Europe! My main goal is Switzerland, but I'm open to any other opportunity."
+          description="I Mexico or, even better, in Europe! If you have an opportunity, feel free to click this card to reach out and get in touch!"
           descriptionStyle={{color: "#000"}}
           link="#contact"
         />
@@ -238,7 +238,7 @@ function Home() {
           image="images/me-cup-chocolate.jpg"
           title="Who am I?"
           titleStyle={{color: "#000"}}
-          description="I was born in Mexico in the year 2000. I am a very social and curios person. I love to learn and to teach. I'm extroverted and I like helping others."
+          description="I was born in Mexico in the year 2000. I am a very social and curious person. I love to learn and to teach. I'm extroverted and I like helping others."
           descriptionStyle={{color: "#000"}}
           width="65%"
         />
@@ -282,7 +282,7 @@ function Home() {
 }
 export default Home;
 
-// TODO: Add Tutoring (orange)
+// TODO: Change phone number
+// TODO: Tutoring 3+ testimonies 
 // TODO: Make responsibe to Mobile
 // TODO: Handle scroll refactor: component for utils
-// TODO: Change phone number

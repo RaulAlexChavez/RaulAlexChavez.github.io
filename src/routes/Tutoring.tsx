@@ -1,5 +1,5 @@
 import React from "react";
-import { CertificateCard, HoverableRotation, IconsRow, SkillCard } from "../components";
+import { CertificateCard, HoverableRotation, IconsRow, SkillCard, Testimony } from "../components";
 
 function WebDev() {
   const mainColorStyle = { color: "#3397e8", fontWeight: "bold" };
@@ -15,21 +15,23 @@ function WebDev() {
         <h1 className="super-title"><span className="light-blue-fg fw-bold">{"</ "}</span><span style={mainColorStyle}>Tutoring</span><span className="light-blue-fg fw-bold">{" >"}</span></h1>
 
         <IconsRow iconsImagesPath={[
-          "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png",
-          "images/html-5.png",
-          "images/css-3.png",
-          "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-        "https://static-00.iconduck.com/assets.00/typescript-icon-icon-2048x2048-2rhh1z66.png",
-          "https://v5.getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png",
-          "https://img.icons8.com/fluent/512/nextjs.png",
-          "https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png",
-          "https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png",
-          "https://www.svgrepo.com/show/331488/mongodb.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png",
+          "https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Html-512.png",
+          "https://cdn-icons-png.flaticon.com/512/5969/5969346.png",
           "",
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
-          "https://img.icons8.com/?size=512&id=34886&format=png",
+          "https://img.icons8.com/?size=512&id=40670&format=png",
+          "https://cdn-icons-png.freepik.com/256/6132/6132222.png?semt=ais_hybrid",
+          "https://cdn-icons-png.flaticon.com/512/226/226777.png",
+          "https://images.icon-icons.com/112/PNG/512/python_18894.png",
           "",
+          "",
+          "",
+          "",
+          "https://cdn-icons-png.flaticon.com/512/3471/3471391.png",
+          "https://cdn-icons-png.flaticon.com/512/3299/3299966.png",
+          "https://cdn-icons-png.freepik.com/512/8263/8263183.png",
+          "https://cdn-icons-png.flaticon.com/512/3299/3299943.png",
+          "",
+          
         ]}/>
 
         <div className="intro">
@@ -37,75 +39,37 @@ function WebDev() {
             <img className="react-rotate" src="images/teach.png" alt="Tutoring" style={{ width: '10vw', height: '10vw', marginRight: '3vw' }} />
             <div className="text-start">
               <p>
-                <Cool>Web Development</Cool> is needed <Cool>everywhere</Cool>. I'm on my way to become a great <Cool>full-stack developer</Cool> so I can be <Cool>useful everywhere</Cool>.
+                I <Cool>love teaching</Cool>. I like helping others <Cool>understand ideas</Cool> in the most <Cool>simple</Cool>, <Cool>interesting</Cool> and <Cool>fun</Cool> way possible. I think <Cool>teachers</Cool> are <Cool>as important as knowledge</Cool> itself.
               </p>
               <p>
-                My strength is <Cool>React</Cool>, and I have solid basis for <Cool>HTML</Cool>, <Cool>CSS</Cool>, <Cool>JS</Cool> and <Cool>SQL</Cool>. I have used <Cool>Express.js</Cool>, <Cool>MongoDB</Cool>, <Cool>REST</Cool>, <Cool>Flask</Cool>, among other technologies.
+                I have always been the <Cool>kid</Cool> who <Cool>helps his classmates</Cool>. I have wide <Cool>tutoring experience</Cool>, mainly in <Cool>math</Cool> and <Cool>programming</Cool>, from <Cool>university level</Cool> to <Cool>elementary school</Cool>, in various contexts: <Cool>presential</Cool>, <Cool>online</Cool>, <Cool>individual</Cool>, <Cool>groups</Cool>, freelance, school programs, and more.
               </p>
             </div>
           </div>
         </div>
 
-        <h1 className="super-title">💡 Experience</h1>
+        <h1 className="super-title">👤 Testimonies</h1>
 
-        <div className="skillset-card-group">
-          <SkillCard
-            experience="Yes, this one!"
-            xpNoAdd
-            bgColor="#79fefc"
-            image="images/my-page.jpg"
-            title="My personal page!"
-            titleStyle={{fontSize: "2vw", color: "#000"}}
-            description="This very page has been built from scratch with React, Bootstrap and love! It's uploaded to GitHub Pages."
-            descriptionStyle={{color: "#000"}}
-            width="100%"
-            link="https://github.com/RaulAlexChavez/RaulAlexChavez.github.io"
-            linkTargetBlank
-          />
-          <SkillCard
-            bgColor="#f5f5f5"
-            experience="Gebar Technologies [1y]"
-            xpNoAdd
-            image="https://www.gebartech.com/web/image/website/1/logo/Gebar%20Technologies?unique=ff963d5"
-            width="55%"
-            title="Jr IT Consultant"
-            titleStyle={{fontSize: "2vw", color: "#000"}}
-            description="I provided updates to the web system of a VISA agency based on their direct feedback, increasing notably the productivity of the team. Worked with Next.js. MongoDB, Express and more, under Azure."
-            descriptionStyle={{color: "#000"}}
-            link="https://www.gebartech.com/"
-            linkTargetBlank
-          />
-          <SkillCard
-            bgColor="#104010"
-            experience="Computational Systems Eng."
-            xpNoAdd
-            image="https://citecuvp.tij.uabc.mx/wp-content/uploads/2022/10/ISOTIPO-UABC-COLORORIGINAL.png"
-            width="100%"
-            title="University Projects"
-            titleStyle={{fontSize: "2vw"}}
-            description="I worked on many school projects with Web Dev, frontend and backend. I learned a lot about the Software Lyfe Cycle and Project Managment."
-            link="https://ingenieria.mxl.uabc.mx/pe_lsc/mapa-curricular-2009-2/"
-            linkTargetBlank
-          />
-        </div>
+        <Testimony
+          name="Nicole"
+          location="Mexicali, Mexico"
+          testimony="Tutor Raul helped me understand programming topics faster, given the little time I had to process information. He made it easier for me to learn quickly and successfully complete my final project for the course. Since I was studying Aerospace Engineering, where programming isn’t a common subject, his guidance was invaluable. Thanks to his tutoring and my effort, I was able to score a perfect 100 on my final project."
+          img="testimonies/nicole.jpg"
+        />
 
-        <h1 className="super-title">📜 Qualifications</h1>
+        {/* Jorge Sánchez - Babo processing */}
+        {/* Aleph Lau - Programming lol */}
+        {/* Jorge - El wey al que le di asesorías en Starbucks - Programación */}
+        {/* El de España de Netherlands - Python or whatever */}
+        {/* Abraham (André) - Java or whatever WAITING*/}
+
+        <h1 className="super-title">📜 Diplomas</h1>
 
         <div className="card-group">
           <CertificateCard
-            title="Network basis, OSI model, TCP/IP"
-            image="certificates/redes.jpg"
-            link="https://platzi.com/p/rachavez/curso/2225-course/diploma/detalle/"
-          />
-          <CertificateCard
-            title="PHP basis and composer"
-            image="certificates/php-composer.jpg"
-            link="https://platzi.com/p/rachavez/curso/2024-course/diploma/detalle/"
-          />
-          <CertificateCard
-            title="A must-have for version-control"
-            image="certificates/git-github.jpg"
-            link="https://platzi.com/p/rachavez/curso/1557-git-github/diploma/detalle/"
+            title="University level tutoring in Programming, while I was still in 1st semester"
+            image="certificates/uabc-tutoring.jpg"
+            link="https://drive.google.com/file/d/1PWQERy7qXl4WWw4I82u3dm0yYH0iOttj/view?usp=drive_link"
           />
         </div>
 
