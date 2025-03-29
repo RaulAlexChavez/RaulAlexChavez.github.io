@@ -1,5 +1,5 @@
 import React from "react";
-import { CertificateCard, HoverableRotation, IconsRow, SkillCard, Testimony } from "../components";
+import { CertificateCard, IconsRow, Testimony } from "../components";
 
 function WebDev() {
   const mainColorStyle = { color: "#3397e8", fontWeight: "bold" };

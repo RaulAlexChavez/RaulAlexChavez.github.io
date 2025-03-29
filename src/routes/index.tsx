@@ -4,3 +4,4 @@ export {default as GameDev} from "./GameDev";
 export {default as WebDev} from "./WebDev";
 export {default as Tutoring} from "./Tutoring";
 export {default as AI} from "./AI";
+export {default as CV} from "./CV";

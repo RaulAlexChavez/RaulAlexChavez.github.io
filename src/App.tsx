@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/global.css";
 import "./components/Navbar.css";
 import { Routes, Route } from "react-router-dom";
-import { AI, DotNet, Tutoring } from "./routes";
+import { AI, CV, DotNet, Tutoring } from "./routes";
 import { GameDev, WebDev } from "./routes";
 import { Navbar, Contact } from './components';
 import React, { ReactNode } from 'react';
@@ -18,19 +18,20 @@ function App() {
 				<Route path="/webdev" element={<WebDev />} />
 				<Route path="/tutoring" element={<Tutoring />} />
 				<Route path="/ai" element={<AI />} />
+				<Route path="/cv" element={<CV />} />
 			</Routes>
 		);
 	}
 
 	return (
 		<>
-			<div className='navbar-main-container position-fixed top-0 bottom-0 start-0'>
+			<div className='navbar-main-container position-fixed top-0 bottom-0 start-0 no-print'>
 				<Navbar />
 			</div>
-			<div className='main-app-container'>
+			<div className='main-app-container cv-container'>
 				<MainApp />
 			</div>
-			<div id="contact">
+			<div id="contact" className="no-print" >
 				<Contact/>
 			</div>
 		</>

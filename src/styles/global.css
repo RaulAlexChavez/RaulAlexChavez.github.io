@@ -104,3 +104,23 @@ body {
 .orange-fg { color: #f07929; }
 .light-blue-fg { color: #89eeec; }
 .bg-water { background-color: #1eaa96; }
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    @page {
+        size: A4; /* O 'letter', según el formato que necesites */
+        margin: 0; /* Elimina márgenes automáticos */
+    }
+    body {
+        print-color-adjust: exact; /* Para navegadores modernos */
+        margin: 0;
+        padding: 0;
+    }
+    .cv-container {
+        padding: 0;
+        margin: 0;
+    }
+}
