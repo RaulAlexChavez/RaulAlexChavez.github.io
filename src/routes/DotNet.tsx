@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/global.css";
 import "./DotNet.css";
 import { Link } from "react-router-dom";
 import { CertificateCard, IconsRow } from "../components";
 
 function DotNet() {
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - .NET"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+
   const mainColorStyle = { color: "#AA60CC", fontWeight: "bold" };
   return (
     <>

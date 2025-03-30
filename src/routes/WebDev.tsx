@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CertificateCard, HoverableRotation, IconsRow, SkillCard } from "../components";
 
 function WebDev() {
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - Web Dev"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+  
   const mainColorStyle = { color: "#00bcd4", fontWeight: "bold" };
 
   const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {

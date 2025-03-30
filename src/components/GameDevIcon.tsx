@@ -11,12 +11,14 @@ const GameDevIcon1 = (props: {style?: React.CSSProperties}) => {
         rotateOnHoverExtraSpeed={1.2/10}
     >
         <div className="" style={props.style ?? {}}>
+          <div style={{margin: "-2vw 0 1vw 0"}}>
             <div className="gear-container">
                 <div className="wrapper-rotating">
-                    <img className="rotating" src={"images/gear.png"} alt={"engine"} style={{width: "100%", height: "100%"}}/>
+                    <img className="rotating" src={"images/gear.png"} alt={"engine"} style={{width: "80%", height: "80%"}}/>
                 </div>
             </div>
-            <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "0vw", marginBottom: "-1vw"}}/>
+          </div>
+          <img className="skillset-card-image z10" src={"images/videojuego.png"} alt={"engine"} style={{marginTop: "-0.2vw", marginBottom: "0.7vw", width: "50%"}}/>
         </div>
       </HoverableRotation>
     );

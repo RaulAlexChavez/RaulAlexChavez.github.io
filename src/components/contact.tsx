@@ -40,7 +40,7 @@ const LanguageLevel = (props: LanguageLevelProps): JSX.Element => {
 
 const Contact: React.FC = () => {
     const columnStyle: React.CSSProperties = { width: '50%', margin: '0.5vw', marginBottom: "2vw", textAlign: 'left', padding: '0.1vw' };
-    const bigTextStyle: React.CSSProperties = { fontSize: '3vw', fontWeight: 'bold', marginBottom: '-2vw' };
+    const bigTextStyle: React.CSSProperties = { fontSize: '2.2vw', fontWeight: 'bold', marginBottom: '-2vw' };
     const flagStyle = { width: '6.5vw', height: '6.5vw', marginTop: '-0.5vw' };
     
     return (
@@ -51,10 +51,13 @@ const Contact: React.FC = () => {
                     <LanguageLevel filledStars={4} halfStars={1} flag={<US className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
                     <LanguageLevel filledStars={3} halfStars={1} flag={<FR className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
                 </div>
-                <div style={{ ...columnStyle, display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: "-1vw" }} className="text-center align-items-center">
+                <div style={{ ...columnStyle, display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: "-1vw" }} className="text-left">
                     <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}(+52) 33 5120 3757</p>
                     <p className="bi-envelope fw-bold super-title" style={bigTextStyle}>{" "}chavezra.work@gmail.com</p>
                     <Link className="bi-linkedin fw-bold super-title" style={bigTextStyle} to={"https://www.linkedin.com/in/raulalexchavez/"} target="_blank">{" "}RaulAlexChavez</Link>
+                    <button className="btn btn-primary fw-bold" style={{ fontSize: '2vw', margin: '3vw 0 0 0'}} onClick={() => {window.open("https://raulalexchavez.github.io/#/cv", "_blank"); window.scrollTo(0, 0);}}>
+                        Download CV
+                    </button>
                 </div>
             </div>
         </div>

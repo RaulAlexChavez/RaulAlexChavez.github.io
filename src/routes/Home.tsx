@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import "../styles/global.css";
 import { HoverableRotation, IconsRow } from "../components";
@@ -8,11 +8,21 @@ import FR from "country-flag-icons/react/3x2/FR";
 
 const ReactRotation = (
   <HoverableRotation rotatingClassName="react-rotate" rotateOnHoverClassName="" hoverableParent="" rotateSpeed={0.7/10} rotateOnHoverExtraSpeed={1.2/10}>
-    <img className="react-rotate" src="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png" alt="React" style={{ width: '14vw', height: '14vw'}} />
+    <img className="react-rotate" src="https://icons.veryicon.com/png/o/business/vscode-program-item-icon/react-3.png" alt="React" style={{ width: '12vw', height: '12vw', margin: "0.8vw 0 0.2vw 0"}} />
   </HoverableRotation>
 )
 
 function Home() {
+
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - Home"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+
   const yellowStyle = { color: "#fddf68", fontWeight: "bold" };
   const orangeStyle = { color: "#f07929", fontWeight: "bold" };
   
@@ -81,9 +91,10 @@ function Home() {
             image="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg"
             title=".NET"
             skills={["ASP.NET", "MVC", "Blazor", "Web API", "Entity Framework", "Unit Testing"]}  
-            width="53%"
+            width="45%"
             link="/dotnet"
             dontTranslate
+            knowMoreButton
           />
           <SkillCard
             bgColor="#004000"
@@ -93,6 +104,7 @@ function Home() {
             skills={["Unity", "Game Design", "Multiplayer", "C#", "Inspector", "Game Jams", "Godot"]}  
             link="/gamedev"
             dontTranslate
+            knowMoreButton
           />
           <SkillCard
             bgColor="#222222"
@@ -102,6 +114,7 @@ function Home() {
             skills={["React", "Next", "Mongo", "SQL", "JS", "Bootstrap",  "TypeScript", "HTML"]}  
             link="/webdev"
             dontTranslate
+            knowMoreButton
           />
           <SkillCard
             bgColor="#3397e8"
@@ -112,6 +125,8 @@ function Home() {
             pillBgColor="bg-light"
             pillTextColor="text-dark"
             link="/tutoring"
+            knowMoreButton
+            knowMoreBtnStyle="btn-outline-light"
           />
           <SkillCard
             bgColor="#660000"
@@ -124,6 +139,8 @@ function Home() {
             pillBgColor="bg-primary"
             link="/ai"
             dontTranslate
+            knowMoreButton
+            knowMoreBtnStyle="btn-outline-warning"
           />
         </div>
 
@@ -288,5 +305,6 @@ function Home() {
 }
 export default Home;
 
+// TODO: Carousel for Skills in Home
 // TODO: Tutoring 3+ testimonies 
 // TODO: Make responsibe to Mobile

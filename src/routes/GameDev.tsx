@@ -1,7 +1,16 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import { CertificateCard, GameDevIcon, IconsRow, SkillCard } from "../components";
 
 function GameDev() {
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - Game Dev"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+
   const mainColorStyle = { color: "#22CC22", fontWeight: "bold" };
 
   const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {

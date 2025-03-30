@@ -23,9 +23,10 @@
 }
 
 .skillset-card-title {
-    font-size: 3vw;
+    font-size: 2.8vw;
     font-weight: 700;
     color: #f1f1f1;
+    margin: -0.5vw 0 0 0;
 }
 
 .skillset-card-content {

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CertificateCard, HoverableRotation, IconsRow, SkillCard } from "../components";
 
-function WebDev() {
+function AI() {
+
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - AI"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+
   const mainColorStyle = { color: "#df2222", fontWeight: "bold" };
 
   const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {
@@ -57,4 +67,4 @@ function WebDev() {
     </>
   );
 }
-export default WebDev;
+export default AI;

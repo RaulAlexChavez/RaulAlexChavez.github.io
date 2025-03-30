@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CertificateCard, IconsRow, Testimony } from "../components";
 
-function WebDev() {
+function Tutoring() {
+  useEffect(() => {
+    const originalTitle = document.title;
+    document.title = "Raúl ALex Chávez - Tutoring"; // Set the title before printing
+
+    return () => {
+        document.title = originalTitle; // Restore original title after printing
+    };
+  }, []);
+
   const mainColorStyle = { color: "#3397e8", fontWeight: "bold" };
 
   const Cool = (props: {children?: React.ReactNode, style?: React.CSSProperties}):JSX.Element => {
@@ -77,4 +86,4 @@ function WebDev() {
     </>
   );
 }
-export default WebDev;
+export default Tutoring;

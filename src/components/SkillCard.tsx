@@ -9,6 +9,8 @@ interface SkillCardProps {
   image?: string,
   imageComponent?: JSX.Element,
   experience?: string,
+  knowMoreButton?: boolean,
+  knowMoreBtnStyle?: string,
   xpNoAdd?: boolean,
   bgColor?: string,
   skills?: string[],
@@ -73,6 +75,14 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
               (props.experiencePillColor ?? "bg-primary")}
               style={{ marginBottom: "1vw"}}>{props.experience}
               {props.xpNoAdd ? "" : "XP"}
+            </span>
+            : null
+          }
+          {props.knowMoreButton ?
+            <span className={
+              "btn " + (props.knowMoreBtnStyle ?? "btn-outline-info")}
+              style={{ margin: "1vw 0 1vw 1vw", fontSize: "1.3vw"}}>
+              {"Know more"}
             </span>
             : null
           }

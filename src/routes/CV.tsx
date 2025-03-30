@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MX, US, FR } from "country-flag-icons/react/3x2";
+import { MX, US, FR, ES } from "country-flag-icons/react/3x2";
 
 const bgColor = "#222a35";
 const coolColor1 = "#00b0f0"
 const coolColor2 = "#81deff"
-const mainColorLight = "fff"
-const mainColorDark = "000"
-const sectionTitleSize = "0.6cm"
-const titleSize = "0.44cm"
-const normalTextSize = "0.39cm"
+const coolColor3 = "#0070c0"
+const mainColorLight = "#fff"
+const mainColorDark = "#000"
+const sectionTitleSize = "0.58cm"
+const titleSize = "0.43cm"
+const normalTextSize = "0.38cm"
+
+const CVHeader = () : JSX.Element => {
+    return (
+        <div style={{ backgroundColor: bgColor, margin: "0", padding: "0", height: "2.5cm"}}>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <h1 style={{color: "#fff", fontWeight: "bold", fontSize: "0.8cm",
+                padding: "0.2cm 0 0 0"}}>
+                    Raúl Alejandro Chávez Valenzuela
+                </h1>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <h2 style={{color: coolColor1, fontWeight: "bold", fontSize: "0.6cm",
+                padding: "0 0 0 0"}}>
+                    Software Engineer | Game Developer | Programming Tutor
+                </h2>
+            </div>
+        </div>
+    )
+}
 
 const MeImage = (): JSX.Element => {
     return(
@@ -168,28 +188,223 @@ const PersonalInfo = (): JSX.Element => {
     );
 };
 
-const CVHeader = () : JSX.Element => {
+const SectionTitle = (props: {img: string, title: string, imgWidthDiff?: number, imgRightMarginDiff?: number, imgLeftMarginDiff?: number}) => {
     return (
-        <div style={{ backgroundColor: bgColor, margin: "0", padding: "0", height: "2.5cm"}}>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h1 style={{color: "#fff", fontWeight: "bold", fontSize: "0.8cm",
-                padding: "0.2cm 0 0 0"}}>
-                    Raúl Alejandro Chávez Valenzuela
-                </h1>
+        <>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", margin: "0.3cm 0 0 0.5cm"}}>
+                <img src={props.img}
+                    style={{
+                        width: ((0.9 + (props.imgWidthDiff ?? 0)) + "cm"),
+                        margin:
+                            "0 " +
+                            ((0.5 + (props.imgRightMarginDiff ?? 0)) + "cm") +" " + 
+                            "0.3cm " +
+                            ((0   + (props.imgLeftMarginDiff ?? 0)) + "cm") }}/>
+                <h1 style={{ fontSize: sectionTitleSize, color: mainColorDark, fontWeight: "lighter" }}>{props.title}</h1>
             </div>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h2 style={{color: coolColor1, fontWeight: "bold", fontSize: "0.6cm",
-                padding: "0 0 0 0"}}>
-                    Software Engineer | Game Developer | Programming Tutor
+            <hr style={{ flex: 1, height: "0.07cm", border: "none", backgroundColor: mainColorDark, margin: "-0.1cm 0.4cm 0.15cm 0.4cm" }} />
+        </>
+    );
+}
+
+const WorkInfo = (props: {title: string, company: string, period: string, description: string, contact?: string, skills: string[]}): JSX.Element => {
+    return (
+        <div style={{margin: "-0.2cm 0.5cm 0 0.5cm"}}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm"}}>
+                <h2>
+                    <span style={{fontSize: titleSize, color: coolColor1, fontWeight: "bold"}}>{props.title}</span>
+                    {" "}
+                    <span style={{fontSize: titleSize, color: mainColorDark, fontWeight: "bold"}}>{props.company}</span>
+                    {" "}
+                    <span style={{fontSize: "0.36cm", color: coolColor1, fontWeight: "light"}}>{"[" + props.period + "]"}</span>
                 </h2>
             </div>
+            <p style={{color: mainColorDark, fontSize: normalTextSize}}>
+                {props.description}
+                <span style={{color: coolColor3, fontSize: "0.36cm"}}>{props.contact}</span>
+            </p>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.3cm"}}>
+                {props.skills.map((skill, index) => (
+                    <>
+                        <span key={index}
+                            style={{margin: "0 0.1cm 0 0", height: "0.6cm", fontSize: normalTextSize, color: "gray"}}
+                        >
+                            {skill + (index < props.skills!.length - 1 ? " - " : "")}
+                        </span>
+                    </>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+const ProfessionalExperience = () => {
+    return (
+        <div>
+            <SectionTitle img="https://cdn-icons-png.flaticon.com/512/4804/4804197.png" title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1}/>
+            <WorkInfo
+                title="Jr IT Consultant & Sw Dev" company="Gebartech" period="Ene 2024 – Nov 2024"
+                description="I’ve participated in the analysis and development of web apps under Azure, closely interacting with the client and end users."
+                skills={["Next", "React", "TypeScript", "Express", "Bootstrap", "MongoDB"]}
+            />
+            <WorkInfo
+                title="Game Developer" company="BC Media Lab" period="Dec 2021 – Oct 2023"
+                description="Published a mobile game in the Play Store and worked on another project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
+                contact="[Tech leader: Edgar Leal - 664 266 9991]"
+                skills={["Unity", "C#", "Git", "GitLab", "SCRUM", "Documentation"]}
+            />
+        </div>
+    );
+}
+
+const SkillSetTitle = (props: {icon: string, title: string, sublink: string}):JSX.Element => {
+    return (
+        <div style={{ marginBottom: "-0.2cm" }}>
+            <Link to={"https://raulalexchavez.github.io/#" + props.sublink} target="_blank"
+                style={{
+                    color: coolColor3, fontSize: sectionTitleSize,
+                    display: "flex", justifyContent: "left", alignItems: "center"
+                }}
+            >
+                <p className={props.icon} style={{marginRight: "0.3cm"}}/><p>{props.title}</p>
+            </Link>
+        </div>
+    );
+}
+
+const SkillSetSection = (props: {icon: string, title: string, sublink: string, content: JSX.Element, skills?: string[]}):JSX.Element => {
+    return (
+        <div
+            style={{ margin: "0.3cm 0.2cm 0 0.4cm" }}
+        >
+            <SkillSetTitle icon={props.icon} title={props.title} sublink={props.sublink}/>
+            {props.content}
+            <div style={{marginTop: "0.1cm", fontSize: normalTextSize, color: "gray"}}>
+                {
+                    props.skills ?
+                    (
+                        props.skills.map((skill, index) => (
+                        <>
+                            <span key={index}
+                                style={{ margin: "0 0 0 0", height: "0.6cm", fontSize: normalTextSize, color: "gray" }}
+                            >
+                                {skill + (index < props.skills!.length - 1 ? " - " : "")}
+                            </span>
+                        </>
+                    )))
+                    :
+                    null
+                }
+            </div>
+        </div>
+    );
+}
+
+const AreasOfExpertise = (): JSX.Element => {
+    return (
+        <>
+            <SectionTitle img="https://images.freeimages.com/fic/images/icons/2770/ios_7_icons/512/code.png" title="Areas of Expertise" imgWidthDiff={-0.05} imgRightMarginDiff={0} imgLeftMarginDiff={0.05}/>
+                        
+            <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet"
+                content={
+                    <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
+                        You con see my experience and qualifications in .NET in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
+                    </div>
+                }
+                skills={["ASP.NET", "MVC", "Blazor", "API", "Entity Framework", "Unit Testing"]}
+            />
+            <SkillSetSection icon="bi-controller" title="Game Development" sublink="/gamedev"
+                content={
+                    <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
+                        Published a game in the Play Store and worked on <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">many other projects</Link>, some <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">playabale online now</Link>!
+                    </div>
+                }
+                skills={["Unity", "Game Design", "Multplayer", "C#", "Godot", "Game Jams"]}
+            />
+            <SkillSetSection icon="bi-browser-chrome" title="Web Development" sublink="/webdev"
+                content={
+                    <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
+                        Made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
+                    </div>
+                }
+                skills={["React", "Next", "MongoDB", "SQL", "PHP", "Typescript", "HTML", "CSS"]}
+            />
+            <SkillSetSection icon="bi-book" title="Tutoring" sublink="/tutoring"
+                content={
+                    <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
+                        I have wide tutoring experience, mainly in math and programming, up to university level. Check out some <Link to={"https://raulalexchavez.github.io/#/tutoring"} target="_blank">testimonies here</Link>.
+                    </div>
+                }
+            />
+            <SkillSetSection icon="bi-cpu-fill" title="Artificial Intelligence" sublink="/ai"
+                content={
+                    <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
+                        Can use the OpenAI API for <Link to={"https://raulalexchavez.github.io/#/ai"} target="_blank">in-app integrated ChatGPT capabilities</Link>. I have knowledge in Prompt Engineering and I'm learning more in AI. 
+                    </div>
+                }
+            />
+        </>
+    );
+}
+
+const SchoolInfo = (props: {flag:JSX.Element, school: string, career: string, place: string, period: string, description: string}): JSX.Element => {
+    return (
+        <div style={{margin: "-0.2cm 0.5cm 0 0.5cm"}}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm"}}>
+                <h2>
+                    {props.flag}
+                    <span style={{fontSize: titleSize, color: coolColor1, fontWeight: "bold"}}>{props.school}</span>
+                    {" "}
+                    <span style={{fontSize: "0.39cm", color: mainColorDark, fontWeight: "bold"}}>{props.career}</span>
+                    {" "}
+                    <span style={{fontSize: "0.34cm", color: coolColor1, fontWeight: "light", marginLeft: "-0.05cm", marginRight: "0.05cm"}}>{"[" + props.place + "]"}</span>
+                    <span style={{fontSize: "0.34cm", color: coolColor1, fontWeight: "light"}}>{"[" + props.period + "]"}</span>
+                </h2>
+            </div>
+            <p style={{color: mainColorDark, fontSize: normalTextSize}}>{props.description}</p>
+        </div>
+    );
+}
+
+const Education = (): JSX.Element => {
+    const flagStyle : React.CSSProperties = {width: "0.8cm", margin: "0.15cm 0.1cm 0 0"}
+    return (
+        <div style={{ margin: "0.45cm 0 0 0"}}>
+            <SectionTitle img="https://static-00.iconduck.com/assets.00/graduation-cap-icon-512x335-2rjjt0b3.png" title="Education" imgWidthDiff={0.1} imgRightMarginDiff={-0.1}/>
+            <div style={{ marginBottom: "0.2cm"}}/>
+            <SchoolInfo
+                flag={<ES style={flagStyle}/>}
+                school="UGR ETSIIT"
+                career="Informatics"
+                place="Granada, Spain"
+                period="Sep 2023 – Feb 2024"
+                description="Earned a scholarship to study in Spain. I learnt about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics."
+            />
+            <SchoolInfo
+                flag={<MX style={flagStyle}/>}
+                school="UABC"
+                career="Computational Systems"
+                place="México"
+                period="Aug 2018 – Jul 2024"
+                description="I was awarded 4 times a scholarship given to the top 1% students. I was part of the University Council, the Competitive Programming Club and more. I also learned a lot about Software Engineering, SDLC, CMMI, UML and processes in the software industry.."
+            />
         </div>
     )
 }
 
 const CV = () => {
+
+    useEffect(() => {
+        const originalTitle = document.title;
+        document.title = "raul-alex-chavez-cv"; // Set the title before printing
+
+        return () => {
+            document.title = originalTitle; // Restore original title after printing
+        };
+    }, []);
+
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0", padding: "0", fontFamily: "Bahnschrift"}}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 0 1cm 0", padding: "0", fontFamily: "Bahnschrift"}}>
             <div
             className="cv-container"
             style={{
@@ -197,13 +412,13 @@ const CV = () => {
                 height: "29.7cm",
                 margin: "0",
                 padding: "0",
-                backgroundColor: "#fff",
+                backgroundColor: "#fbfbfb",
                 lineHeight: "1.2",
             }}>
 
                 <CVHeader/>
 
-                <div style={{ display: "flex", width: "100%", height: "27.2CM", margin: "0", padding: "0"}}>
+                <div style={{ display: "flex", width: "100%", height: "27.21cm", margin: "0", padding: "0"}}>
                     <div style={{ flex: 2, textAlign: "left", backgroundColor: bgColor }}>
                         <MeImage/>
                         <MyLinks/>
@@ -214,12 +429,31 @@ const CV = () => {
                         <PersonalInfo/>
                     </div>
                     <div style={{ flex: 3, textAlign: "left" }}>
-                        {/* Content for the right column */}
+                        <ProfessionalExperience/>
+                        <AreasOfExpertise/>
+                        <Education/>
                     </div>
                 </div>
             </div>
+            <button
+                onClick={() => window.print()}
+                style={{
+                    position: "absolute",
+                    top: "1vw",
+                    right: "1vw",
+                    padding: "0.5cm 1cm",
+                    fontSize: "2vw",
+                    backgroundColor: coolColor3,
+                    color: mainColorLight,
+                    border: "none",
+                    borderRadius: "0.3cm",
+                    cursor: "pointer",
+                }}
+                className="bi-printer no-print"
+            >
+                {" Print"}
+            </button>
         </div>
-
     )
 }
 
