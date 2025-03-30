@@ -81,7 +81,7 @@ const SkillCard = (props: SkillCardProps):JSX.Element => {
           {props.knowMoreButton ?
             <span className={
               "btn " + (props.knowMoreBtnStyle ?? "btn-outline-info")}
-              style={{ margin: "1vw 0 1vw 1vw", fontSize: "1.3vw"}}>
+              style={{ margin: "1vw 0 1vw 1vw", fontSize: "1.3vw", padding: "0.5vw", borderRadius: "0.6vw"}}>
               {"Know more"}
             </span>
             : null

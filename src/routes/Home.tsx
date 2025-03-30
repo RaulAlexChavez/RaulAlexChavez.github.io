@@ -120,6 +120,7 @@ function Home() {
             bgColor="#3397e8"
             experience="5y+"
             image="images/teach.png"
+            width="50%"
             title="Tutoring"
             skills={["Basic / Intermediate", "Kids / Teens / Adults", "Programming", "Math"]}
             pillBgColor="bg-light"
@@ -134,6 +135,7 @@ function Home() {
             experiencePillColor="bg-danger"
             xpNoAdd
             image="images/ai.png"
+            width="50%"
             title="AI"
             skills={["Python", "OpenAI API", "ChatGPT", "Prompt Engineering", "Fine-tuning"]}  
             pillBgColor="bg-primary"
@@ -152,7 +154,7 @@ function Home() {
             experience="Computational Systems Eng."
             xpNoAdd
             image="https://citecuvp.tij.uabc.mx/wp-content/uploads/2022/10/ISOTIPO-UABC-COLORORIGINAL.png"
-            width="100%"
+            width="85%"
             title=""
             titleStyle={{fontSize: "2vw"}}
             description="I was awarded 4 times a top 1% scholarship. I was part of the University Council and the Competitive Programming Club. I learned a lot about Software Engineering, SDLC, CMMI, UML and Project Management."
@@ -164,10 +166,10 @@ function Home() {
             xpNoAdd
             bgColor="#552020"
             image="https://cdn.countryflags.com/thumbs/spain/flag-400.png"
+            width="60%"
             title="1 exchange semester!"
             titleStyle={{fontSize: "1.85vw"}}
             description="Earned a scholarship to study in Spain. I learned about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics. I had enriching cultural and language experiences with people from all over the world."
-            width="70%"
             link="https://grados.ugr.es/ramas/ingenieria-arquitectura/grado-ingenieria-informatica"
             linkTargetBlank
           />
@@ -176,9 +178,9 @@ function Home() {
             experience="AI / Data Science / Game Dev"
             xpNoAdd
             image="images/grad-hat.png"
-            width="55%"
+            width="50%"
             title="Looking forward to do a Master's degree!"
-            titleStyle={{fontSize: "2vw", color: "#000"}}
+            titleStyle={{fontSize: "1.8vw", color: "#000"}}
             description="I Mexico or, even better, in Europe! If you have an opportunity, feel free to click this card to reach out and get in touch!"
             descriptionStyle={{color: "#000"}}
             link="#contact"
@@ -194,7 +196,7 @@ function Home() {
             experiencePillColor="bg-water"
             xpNoAdd
             image="https://cdn-icons-png.flaticon.com/512/4727/4727480.png"
-            width="70%"
+            width="67%"
             title=""
             titleStyle={{fontSize: "2vw"}}
             description="I have used SCRUM with most of the teams I have worked with. I also have worked with technical documentation, requirements, UML diagrams and more."
