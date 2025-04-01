@@ -13,7 +13,7 @@ const Testimony = (props: TestimonyProps): JSX.Element => {
     const imgStyle: React.CSSProperties = { width: "80%", height: "80%", borderRadius: "50%", objectFit: "cover", aspectRatio: "1/1" }
     const userNameStyle: React.CSSProperties = { fontSize: "2.5vw", fontWeight: "bold", color: "#3397e8"}
     return (
-        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginBottom: "2.3vw" }}>
             <div className="testimony" style={{ display: "grid", gridTemplateColumns: "1fr 4fr", gap: "0", alignItems: "center", width: "90%", textAlign: "center" }}>
                 <div>
                     <img className="scale-on-hover-1-1 shadow-on-hover" src={props.img ?? defaulImg} alt="testimony" style={imgStyle} />

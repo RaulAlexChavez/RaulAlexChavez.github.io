@@ -307,6 +307,8 @@ function Home() {
 }
 export default Home;
 
+// TODO: Click to copy - Phone and email
+// TODO: Add hidden page counter
 // TODO: Carousel for Skills in Home
 // TODO: Tutoring 3+ testimonies 
 // TODO: Make responsibe to Mobile

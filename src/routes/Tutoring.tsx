@@ -60,6 +60,14 @@ function Tutoring() {
         <h1 className="super-title">👤 Testimonies</h1>
 
         <Testimony
+          name="Adrián"
+          location="Mexicali, Mexico"
+          testimony="With great knowledge comes great responsibility, which I'm witness of Raul having both. Not only helping me with coding on Java or Unity, but also with differential calculus and overall math. A great tutor and a great programmer."
+
+          img="https://media.licdn.com/dms/image/v2/D5603AQH9s1MXFRvM4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718235221389?e=1749081600&v=beta&t=4g1qAHh24weEbllN-Ko0qoXMH2GSOwC1lDvqYLrPSYM"
+        />
+
+        <Testimony
           name="Nicole"
           location="Mexicali, Mexico"
           testimony="Tutor Raul helped me understand programming topics faster, given the little time I had to process information. He made it easier for me to learn quickly and successfully complete my final project for the course. Since I was studying Aerospace Engineering, where programming isn’t a common subject, his guidance was invaluable. Thanks to his tutoring and my effort, I was able to score a perfect 100 on my final project."
