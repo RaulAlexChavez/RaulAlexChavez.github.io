@@ -308,7 +308,7 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
-                        You con see my experience and qualifications in .NET in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
+                        You can see my experience and qualifications in .NET in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
                     </div>
                 }
                 skills={["ASP.NET", "MVC", "Blazor", "API", "Entity Framework", "Unit Testing"]}
