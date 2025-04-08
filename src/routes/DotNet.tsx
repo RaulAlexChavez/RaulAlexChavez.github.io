@@ -52,7 +52,13 @@ function DotNet() {
 
         <div className="card-group">
           <CertificateCard
-            title="Create APIs with REST for .NET"
+            title="Blazor WebAssembly, Models, Services, use APIs"
+            image="certificates/blazor-webassembly.jpg"
+            link="https://platzi.com/p/rachavez/curso/2983-apis-net/diploma/detalle/"
+            new
+          />
+          <CertificateCard
+            title="Create RESTful APIs for .NET"
             image="certificates/apis-net.jpg"
             link="https://platzi.com/p/rachavez/curso/2983-apis-net/diploma/detalle/"
           />

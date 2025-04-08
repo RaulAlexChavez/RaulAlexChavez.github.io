@@ -52,14 +52,15 @@ function AI() {
 
         <div className="card-group">
           <CertificateCard
-            title="ChatGPT: Voice, Images, Analytics, Prompt Eng."
-            image="certificates/chatgpt.jpg"
-            link="https://platzi.com/p/rachavez/curso/9969-course/diploma/detalle/"
-          />
-          <CertificateCard
             title="OpenAI API: Text, voice, images, fine-tuning"
             image="certificates/openai-api.jpg"
             link="https://platzi.com/p/rachavez/curso/11458-openai-api/diploma/detalle/"
+            new
+          />
+          <CertificateCard
+            title="ChatGPT: Voice, Images, Analytics, Prompt Eng."
+            image="certificates/chatgpt.jpg"
+            link="https://platzi.com/p/rachavez/curso/9969-course/diploma/detalle/"
           />
         </div>
 
