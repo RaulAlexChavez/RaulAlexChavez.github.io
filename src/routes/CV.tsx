@@ -240,7 +240,7 @@ const WorkInfo = (props: {title: string, company: string, period: string, descri
 
 const ProfessionalExperience = () => {
     return (
-        <div>
+        <div style={{ marginTop: "0.45cm 0 0 0"}}>
             <SectionTitle img="https://cdn-icons-png.flaticon.com/512/4804/4804197.png" title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1}/>
             <WorkInfo
                 title="Jr IT Consultant & Sw Dev" company="Gebartech" period="Ene 2024 – Nov 2024"
@@ -308,7 +308,8 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
-                        You can see my experience and qualifications in .NET in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
+                        I have completed various courses about .NET, Blazor, Unit Testing, APIs, etc.
+                        You can see more aobut my experience in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
                     </div>
                 }
                 skills={["ASP.NET", "MVC", "Blazor", "API", "Entity Framework", "Unit Testing"]}
