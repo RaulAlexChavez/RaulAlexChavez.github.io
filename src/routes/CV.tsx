@@ -8,15 +8,20 @@ const coolColor2 = "#81deff"
 const coolColor3 = "#0070c0"
 const mainColorLight = "#fff"
 const mainColorDark = "#000"
-const sectionTitleSize = "0.58cm"
-const titleSize = "0.43cm"
-const normalTextSize = "0.38cm"
+// const sectionTitleSize = "0.58cm"
+// const titleSize = "0.43cm"
+// const normalTextSize = "0.38cm"
+// const headerTextSize = "0.8cm"
+const sectionTitleSize = "0.53cm"
+const titleSize = "0.37cm"
+const normalTextSize = "0.35cm"
+const headerTextSize = "0.8cm"
 
 const CVHeader = () : JSX.Element => {
     return (
         <div style={{ backgroundColor: bgColor, margin: "0", padding: "0", height: "2.5cm"}}>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h1 style={{color: "#fff", fontWeight: "bold", fontSize: "0.8cm",
+                <h1 style={{color: "#fff", fontWeight: "bold", fontSize: headerTextSize,
                 padding: "0.2cm 0 0 0"}}>
                     Raúl Alejandro Chávez Valenzuela
                 </h1>
@@ -87,9 +92,9 @@ const Skills = (): JSX.Element => {
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div style={{ flex: 1, marginRight: "0.2cm" }}>
                     <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Main Skills</h2>
-                    <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
-                        <li>Unity</li>
-                        <li>C#</li>
+                    <ul translate="no" style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
+                        <li translate="no">Unity</li>
+                        <li translate="no">C#</li>
                         <li>Git & GitLab</li>
                         <li>Python</li>
                         <li>Regex</li>
@@ -113,7 +118,7 @@ const Skills = (): JSX.Element => {
                         <li>Arduino</li>
                         <li>Linux</li>
                         <li>Trello</li>
-                        <li>Office Tools</li>
+                        <li translate="no">Office Tools</li>
                         <li>Video editing</li>
                     </ul>
                 </div>
@@ -207,14 +212,18 @@ const SectionTitle = (props: {img: string, title: string, imgWidthDiff?: number,
     );
 }
 
-const WorkInfo = (props: {title: string, company: string, period: string, description: string, contact?: string, skills: string[]}): JSX.Element => {
+const WorkInfo = (props: {title: string, company: string, period: string, description: string, contact?: string, skills: string[], dontTranslateTitle?: boolean}): JSX.Element => {
     return (
         <div style={{margin: "-0.2cm 0.5cm 0 0.5cm"}}>
             <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm"}}>
                 <h2>
-                    <span style={{fontSize: titleSize, color: coolColor1, fontWeight: "bold"}}>{props.title}</span>
+                    <span translate={props.dontTranslateTitle ? "no" : "yes"}
+                        style={{fontSize: titleSize, color: coolColor1, fontWeight: "bold"}}
+                    >
+                        {props.title}
+                    </span>
                     {" "}
-                    <span style={{fontSize: titleSize, color: mainColorDark, fontWeight: "bold"}}>{props.company}</span>
+                    <span translate="no" style={{fontSize: titleSize, color: mainColorDark, fontWeight: "bold"}}>{props.company}</span>
                     {" "}
                     <span style={{fontSize: "0.36cm", color: coolColor1, fontWeight: "light"}}>{"[" + props.period + "]"}</span>
                 </h2>
@@ -226,7 +235,7 @@ const WorkInfo = (props: {title: string, company: string, period: string, descri
             <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.3cm"}}>
                 {props.skills.map((skill, index) => (
                     <>
-                        <span key={index}
+                        <span key={index} translate="no"
                             style={{margin: "0 0.1cm 0 0", height: "0.6cm", fontSize: normalTextSize, color: "gray"}}
                         >
                             {skill + (index < props.skills!.length - 1 ? " - " : "")}
@@ -243,12 +252,12 @@ const ProfessionalExperience = () => {
         <div style={{ marginTop: "0.45cm 0 0 0"}}>
             <SectionTitle img="https://cdn-icons-png.flaticon.com/512/4804/4804197.png" title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1}/>
             <WorkInfo
-                title="Jr IT Consultant & Sw Dev" company="Gebartech" period="Ene 2024 – Nov 2024"
+                title="Jr IT Consultant & Sw Dev" dontTranslateTitle company="Gebartech" period="Ene 2024 – Nov 2024"
                 description="I’ve participated in the analysis and development of web apps under Azure, closely interacting with the client and end users."
                 skills={["Next", "React", "TypeScript", "Express", "Bootstrap", "MongoDB"]}
             />
             <WorkInfo
-                title="Game Developer" company="BC Media Lab" period="Dec 2021 – Oct 2023"
+                title="Game Developer" dontTranslateTitle company="BC Media Lab" period="Dec 2021 – Oct 2023"
                 description="Published a mobile game in the Play Store and worked on another project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
                 contact="[Tech leader: Edgar Leal - 664 266 9991]"
                 skills={["Unity", "C#", "Git", "GitLab", "SCRUM", "Documentation"]}
@@ -257,7 +266,7 @@ const ProfessionalExperience = () => {
     );
 }
 
-const SkillSetTitle = (props: {icon: string, title: string, sublink: string}):JSX.Element => {
+const SkillSetTitle = (props: {icon: string, title: string, sublink: string, dontTranslateTitle?: boolean}):JSX.Element => {
     return (
         <div style={{ marginBottom: "-0.2cm" }}>
             <Link to={"https://raulalexchavez.github.io/#" + props.sublink} target="_blank"
@@ -266,18 +275,18 @@ const SkillSetTitle = (props: {icon: string, title: string, sublink: string}):JS
                     display: "flex", justifyContent: "left", alignItems: "center"
                 }}
             >
-                <p className={props.icon} style={{marginRight: "0.3cm"}}/><p>{props.title}</p>
+                <p translate={props.dontTranslateTitle ? "no" : "yes"} className={props.icon} style={{marginRight: "0.3cm"}}/><p>{props.title}</p>
             </Link>
         </div>
     );
 }
 
-const SkillSetSection = (props: {icon: string, title: string, sublink: string, content: JSX.Element, skills?: string[]}):JSX.Element => {
+const SkillSetSection = (props: {icon: string, title: string, sublink: string, content: JSX.Element, skills?: string[], dontTranslateTitle?: boolean}):JSX.Element => {
     return (
         <div
             style={{ margin: "0.3cm 0.2cm 0 0.4cm" }}
         >
-            <SkillSetTitle icon={props.icon} title={props.title} sublink={props.sublink}/>
+            <SkillSetTitle dontTranslateTitle={props.dontTranslateTitle} icon={props.icon} title={props.title} sublink={props.sublink}/>
             {props.content}
             <div style={{marginTop: "0.1cm", fontSize: normalTextSize, color: "gray"}}>
                 {
@@ -305,7 +314,7 @@ const AreasOfExpertise = (): JSX.Element => {
         <>
             <SectionTitle img="https://images.freeimages.com/fic/images/icons/2770/ios_7_icons/512/code.png" title="Areas of Expertise" imgWidthDiff={-0.05} imgRightMarginDiff={0} imgLeftMarginDiff={0.05}/>
                         
-            <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet"
+            <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet" dontTranslateTitle
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize}}>
                         I have completed various courses about .NET, Blazor, Unit Testing, APIs, etc.
