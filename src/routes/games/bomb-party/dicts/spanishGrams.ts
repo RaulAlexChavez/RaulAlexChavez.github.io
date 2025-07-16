@@ -1,3 +1,5 @@
+import { words_spanish } from "./spanish";
+
 const bigrams: string[] = ["DE", "LA", "EL", "EN", "ES", "UN", "DA", "TE", "RE", "LE", "SE", "AN", "ME", "AL", "NE", "ON", "DO", "TA", "AR", "ER", "NT", "OS", "CO", "AS", "TO", "LO", "PA", "NA", "TI", "CA", "RA", "CI", "MA", "OR", "QU", "NO", "IO", "SA", "LI", "SO", "RI", "RO", "PE", "ST", "MI", "ND", "IL", "AD", "MO", "IC", "LO", "PO", "NI", "AB", "TR", "LL", "HA", "AC", "UE", "DI", "SU", "PR", "VA", "CH", "IE", "SI", "TU", "IM", "VI", "GU", "OI", "CE", "IT", "TH", "FI", "IN", "BA", "RR", "BR", "SC", "PL", "SP", "CT", "HE", "UR", "RS", "OL", "UP", "UT", "OM", "UN", "US", "IR", "IS", "ET", "FE", "LE", "OD", "UL", "CR", "LU", "GR", "CL", "DR", "FR", "FL", "BL"];
 
 const trigrams: string[] = ["QUE", "ENT", "EST", "DEL", "CON", "ADE", "PAR", "POR", "COM", "IÓN", "CIÓ", "ERA", "TER", "RES", "DOS", "MEN", "IEN", "STO", "LOS", "LAS", "UNA", "TAR", "HER", "PER", "ING", "HAB", "TEN", "SER", "VER", "TRA", "PRO", "SUS", "MOV", "TIC", "INO", "MOS", "CHA", "ERO", "IDA", "IMA", "TOR", "REP", "MAN", "GEN", "IVA", "ESE", "EME", "ARS", "ESP", "CAS", "MIE", "ORO", "ESA", "INE", "OSO", "ABA", "ESO", "ARO", "AMO", "ALA", "UER", "USO", "RON", "SAN", "REG", "RAM", "GAR", "HOR", "GUA", "URO", "TUD", "ADO", "MOD", "REL", "CUE", "RAN", "ENE", "MAR", "REA", "TEL", "TED", "SOB", "SOL", "GAN", "CAN", "MIS", "TAS", "TOS", "CAR", "COR", "DOR", "FOR", "GOR", "HAS", "VOS", "MER", "SER", "NAD", "BAJ", "BAR", "SAB", "VAL", "VIA", "SIM", "SIN", "CER", "PER"];
@@ -30,5 +32,6 @@ export const spanishGrams = {
 	bigrams,
 	trigrams,
 	letterValues,
-	accentMap
+	accentMap,
+	words: words_spanish
 };

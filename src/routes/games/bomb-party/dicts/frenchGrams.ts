@@ -1,3 +1,5 @@
+import { words_french } from "./french";
+
 const bigrams: string[] = ["DE", "LE", "RE", "EN", "NT", "ER", "ON", "ES", "ET", "AN", "TE", "IL", "SE", "NE", "OU", "AI", "IN", "ME", "TI", "LA", "CE", "ST", "QU", "EL", "UR", "AR", "CH", "CO", "OR", "LI", "UN", "SA", "RA", "RI", "AU", "AL", "EU", "IS", "TO", "NO", "ND", "VE", "NA", "TR", "MA", "RO", "SO", "IT", "DI", "LL", "EM", "EI", "AS", "PA", "DA", "ED", "MO", "CI", "TU", "EA", "LO", "IO", "AM", "BO", "AT", "BA", "FO", "LE", "TA", "PR", "US", "VA", "VI", "OS", "HE", "PE", "PO", "GE", "DO", "GU", "GA", "FA", "VO", "GO", "BE", "SI", "FI", "CA", "BU", "FE", "MI", "JE", "AB", "BL", "BR", "CR", "DR", "FR", "GR", "PL", "TR"];
 
 const trigrams: string[] = ["ENT", "TIO", "DES", "LES", "CON", "TER", "UNE", "QUE", "ION", "ANT", "EUR", "OUR", "ESE", "OUS", "LLE", "NTE", "MEN", "QUI", "EUR", "ERS", "IEN", "RES", "AIT", "EST", "POR", "TRE", "AIS", "PRE", "AIN", "REP", "ENG", "ESS", "AUT", "TOU", "VER", "TIE", "MET", "OUV", "MON", "PAR", "SUR", "ERO", "MIS", "GRA", "MAI", "SER", "RAI", "INT", "TRA", "COM", "VOU", "EXP", "ACE", "ORT", "REG", "VEL", "VEU", "VEI", "ROU", "ECO", "GUI", "ISE", "ICE", "ITE", "ROI", "SOI", "TOI", "LOI", "CHA", "CHE", "CHI", "CHO", "CHU", "ART", "ESC", "SOC", "SOL", "CAR", "COR", "COU", "DER", "JOU", "PLA", "PLU", "PRO", "TEM", "TEN", "HAB", "HOM", "SAV", "TAB", "VAL", "VEN", "VIT", "LOR", "FER"];
@@ -32,5 +34,6 @@ export const frenchGrams = {
 	bigrams,
 	trigrams,
 	letterValues,
-	accentMap
+	accentMap,
+	words: words_french
 };

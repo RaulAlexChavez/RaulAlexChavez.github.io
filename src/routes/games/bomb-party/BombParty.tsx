@@ -7,11 +7,16 @@ interface BombPartyProps {
     something?: string;
 }
 
+type LastWord = {
+    word: string;
+    languages: string[];
+}
+
 const BombParty: React.FC<BombPartyProps> = ({
     something = "default value",
 }) => {
     const [usedAlphabet, setUsedAlphabet] = React.useState<Record<string, boolean>>({});
-    const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const alphabet: string = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
     const [points, setPoints] = React.useState<number>(0);
     const [alphabetClears, setAlphabetClears] = React.useState<number>(0);
     const [currentWord, setCurrentWord] = React.useState<string>("");
@@ -25,10 +30,11 @@ const BombParty: React.FC<BombPartyProps> = ({
         // "japanese": true
     });
     const [availableGrams, setAvailableGrams] = React.useState<string[]>([]);
+    const [lastWord, setLastWord] = React.useState<LastWord | null>(null);
 
     useEffect(() => {
         const grams = getGrams();
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach((letter) => {
+        alphabet.split("").forEach((letter) => {
             setUsedAlphabet((prev) => ({ ...prev, [letter]: false }));
         });
 
@@ -37,7 +43,6 @@ const BombParty: React.FC<BombPartyProps> = ({
     }, []);
 
     function getGrams(): string[] {
-        setAvailableGrams([]); // Limpiar primero
         let grams: string[] = [];
 
         if (currentLanguages.english) {
@@ -50,7 +55,6 @@ const BombParty: React.FC<BombPartyProps> = ({
             grams.push(...frenchGrams.bigrams, ...frenchGrams.trigrams);
         }
 
-        setAvailableGrams(grams);
         return grams;
     }
 
@@ -108,16 +112,51 @@ const BombParty: React.FC<BombPartyProps> = ({
     function handleWordSubmit(e: React.KeyboardEvent<HTMLInputElement>) {
         e.preventDefault();
         const word = currentWord.trim().toUpperCase();
-        // Verificar si la palabra contiene el gram actual
-        if (word.includes(currentGram)) {
-            // TODO: Use letterValues to calculate points
-            setPoints(points + word.length);
-            generateRandomGram(availableGrams);
+
+        let newLastWord: LastWord = {
+            word: word,
+            languages: []
         }
-        else {
+
+        console.log("Word submitted:", word);
+        // Verificar si la palabra contiene el gram actual
+        if (!word.includes(currentGram.toUpperCase())) {
             setCurrentWord("");
             return;
         }
+        console.log("Word contains current gram:", currentGram);
+
+        // TODO: Use letterValues to calculate points
+        let validLanguages = 0;
+        if (currentLanguages.english) {
+            if (englishGrams.words.includes(word.toLowerCase())) {
+                validLanguages++;
+                console.log("Valid word in English:", word);
+                newLastWord.languages.push("English");
+            }
+        }
+        if (currentLanguages.español) {
+            if (spanishGrams.words.includes(word.toLowerCase())) {
+                validLanguages++;
+                console.log("Valid word in Español:", word);
+                newLastWord.languages.push("Español");
+            }
+        }
+        if (currentLanguages.français) {
+            if (frenchGrams.words.includes(word.toLowerCase())) {
+                validLanguages++;
+                console.log("Valid word in Français:", word);
+                newLastWord.languages.push("Français");
+            }
+        }
+        if (validLanguages === 0) {
+            setCurrentWord("");
+            return;
+        }
+        console.log("Valid languages count:", validLanguages);
+
+        setPoints(points + word.length * validLanguages);
+        generateRandomGram(availableGrams);
 
         // Verificar si la palabra contiene letras del alfabeto usado
         for (const letter of word) {
@@ -136,7 +175,8 @@ const BombParty: React.FC<BombPartyProps> = ({
                 return reset;
             });
         }
-
+        
+        setLastWord(newLastWord);
         setCurrentWord("");
     }
 
@@ -235,6 +275,27 @@ const BombParty: React.FC<BombPartyProps> = ({
         );
     }
 
+    const lastWordView = () => {
+        if (!lastWord) return null;
+        return (
+            <div style={{
+                margin: "16px 0",
+                padding: "12px",
+                borderRadius: "6px",
+                background: "#333",
+                color: "#fff",
+                textAlign: "center"
+            }}>
+                <div>
+                    <strong>Last valid word:</strong> {lastWord.word}
+                </div>
+                <div style={{ marginTop: "8px" }}>
+                    {lastWord.languages.join(", ")}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div style={{
             display: "flex",
@@ -249,7 +310,10 @@ const BombParty: React.FC<BombPartyProps> = ({
                 width: "800px",
             }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "-50px" }}>
-                    {pointsView()}
+                    <div>
+                        {pointsView()}
+                        {lastWordView()}
+                    </div>
                     {languageSelector()}
 
                 </div>
