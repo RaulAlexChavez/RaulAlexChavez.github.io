@@ -1,4 +1,5 @@
 import { words_spanish } from "./spanish";
+import { words_spanish_normalized } from "./spanish-normalized";
 
 const bigrams: string[] = ["DE", "LA", "EL", "EN", "ES", "UN", "DA", "TE", "RE", "LE", "SE", "AN", "ME", "AL", "NE", "ON", "DO", "TA", "AR", "ER", "NT", "OS", "CO", "AS", "TO", "LO", "PA", "NA", "TI", "CA", "RA", "CI", "MA", "OR", "QU", "NO", "IO", "SA", "LI", "SO", "RI", "RO", "PE", "ST", "MI", "ND", "IL", "AD", "MO", "IC", "LO", "PO", "NI", "AB", "TR", "LL", "HA", "AC", "UE", "DI", "SU", "PR", "VA", "CH", "IE", "SI", "TU", "IM", "VI", "GU", "OI", "CE", "IT", "TH", "FI", "IN", "BA", "RR", "BR", "SC", "PL", "SP", "CT", "HE", "UR", "RS", "OL", "UP", "UT", "OM", "UN", "US", "IR", "IS", "ET", "FE", "LE", "OD", "UL", "CR", "LU", "GR", "CL", "DR", "FR", "FL", "BL"];
 
@@ -33,5 +34,6 @@ export const spanishGrams = {
 	trigrams,
 	letterValues,
 	accentMap,
-	words: words_spanish
+	words: words_spanish,
+	words_normalized: words_spanish_normalized
 };

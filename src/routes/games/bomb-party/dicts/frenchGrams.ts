@@ -1,4 +1,5 @@
 import { words_french } from "./french";
+import { words_french_normalized } from "./french-normalized"
 
 const bigrams: string[] = ["DE", "LE", "RE", "EN", "NT", "ER", "ON", "ES", "ET", "AN", "TE", "IL", "SE", "NE", "OU", "AI", "IN", "ME", "TI", "LA", "CE", "ST", "QU", "EL", "UR", "AR", "CH", "CO", "OR", "LI", "UN", "SA", "RA", "RI", "AU", "AL", "EU", "IS", "TO", "NO", "ND", "VE", "NA", "TR", "MA", "RO", "SO", "IT", "DI", "LL", "EM", "EI", "AS", "PA", "DA", "ED", "MO", "CI", "TU", "EA", "LO", "IO", "AM", "BO", "AT", "BA", "FO", "LE", "TA", "PR", "US", "VA", "VI", "OS", "HE", "PE", "PO", "GE", "DO", "GU", "GA", "FA", "VO", "GO", "BE", "SI", "FI", "CA", "BU", "FE", "MI", "JE", "AB", "BL", "BR", "CR", "DR", "FR", "GR", "PL", "TR"];
 
@@ -35,5 +36,6 @@ export const frenchGrams = {
 	trigrams,
 	letterValues,
 	accentMap,
-	words: words_french
+	words: words_french,
+	words_normalized: words_french_normalized
 };
