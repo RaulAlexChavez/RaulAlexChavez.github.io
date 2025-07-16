@@ -7,6 +7,7 @@ import { GameDev, WebDev } from "./routes";
 import { Navbar, Contact } from './components';
 import React, { ReactNode } from 'react';
 import Home from './routes/Home';
+import BombParty from './routes/games/bomb-party/BombParty';
 
 function App() {
 	const MainApp = (): JSX.Element => {
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/tutoring" element={<Tutoring />} />
 				<Route path="/ai" element={<AI />} />
 				<Route path="/cv" element={<CV />} />
+				<Route path="/games/bomb-party-multilingual" element={<BombParty />} />
 			</Routes>
 		);
 	}
