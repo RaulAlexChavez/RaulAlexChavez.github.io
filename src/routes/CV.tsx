@@ -12,7 +12,7 @@ const mainColorDark = "#000"
 // const titleSize = "0.43cm"
 // const normalTextSize = "0.38cm"
 // const headerTextSize = "0.8cm"
-const sectionTitleSize = "0.53cm"
+const sectionTitleSize = "0.5cm"
 const titleSize = "0.37cm"
 const normalTextSize = "0.35cm"
 const headerTextSize = "0.8cm"
@@ -60,7 +60,7 @@ const MeImage = (): JSX.Element => {
 const MyLinks = (): JSX.Element => {
     return (
         <div style={{ margin: "0.4cm 0 0 0.7cm", fontSize: titleSize }}>
-            <div style={{ margin: "0.2cm" }}>
+            <div className="flex flex-row gap-1 items-center" style={{ margin: "0.2cm" }}>
                 <img src="https://cdn-icons-png.flaticon.com/512/4906/4906292.png"
                     style={{ width: "1cm", marginRight: "0.2cm" }} />
                 <Link to={"https://raulalexchavez.github.io/"}
@@ -68,7 +68,7 @@ const MyLinks = (): JSX.Element => {
                     My Portfolio Web Page
                 </Link>
             </div>
-            <div style={{ margin: "0.2cm" }}>
+            <div className="flex flex-row gap-1 items-center" style={{ margin: "0.2cm" }}>
                 <img src="images/linkedin.png"
                     style={{ width: "0.8cm", marginRight: "0.4cm" }} />
                 <Link to={"https://raulalexchavez.github.io/"}
@@ -85,11 +85,14 @@ const Profile = (): JSX.Element => {
         <div style={{ margin: "0.7cm 0.7cm 0 0.7cm" }}>
             <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Profile</h2>
             <p style={{ fontSize: normalTextSize, color: mainColorLight }}>
-                I’m a social and curious person, very good at speaking in public and explaining ideas.
+                I’m social, curious and openminded. I like speaking in public, explaining ideas and helping others.
                 I’m always learning and looking for growth.
             </p>
             <p style={{ fontSize: normalTextSize, color: mainColorLight, marginTop: "-0.25cm" }}>
                 I have a focus on client satisfaction and UX. My goal is to make the life of the users easier.
+            </p>
+            <p style={{ fontSize: normalTextSize, color: mainColorLight, marginTop: "-0.25cm" }}>
+                I also love multicultural interactions!
             </p>
         </div>
     );
@@ -132,20 +135,20 @@ const Skills = (): JSX.Element => {
         <div style={{ margin: "0.6cm 0.7cm 0 0.7cm" }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 {/* <div style={{ display: "flex", flexDirection: "column" }}> */}
-                    <div style={{ flex: 55, marginRight: "0.2cm" }}>
-                        <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Top Skills</h2>
-                        <ul translate="no" style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
-                            {top_skill_list.map((skill, index) => (
-                                <li key={index} translate="no">{skill}</li>
-                            ))}
-                        </ul>
-                    </div>
+                <div style={{ flex: 55, marginRight: "0.2cm" }}>
+                    <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Top Skills</h2>
+                    <ul translate="no" style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
+                        {top_skill_list.map((skill, index) => (
+                            <li key={index} translate="no" style={{ listStyle: "disc" }}>{skill}</li>
+                        ))}
+                    </ul>
+                </div>
                 {/* </div> */}
                 <div style={{ flex: 45, marginLeft: "0.2cm" }}>
                     <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Secondary Skills</h2>
                     <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
                         {secondary_skill_list.map((skill, index) => (
-                            <li key={index} translate="no">{skill}</li>
+                            <li key={index} translate="yes" style={{ listStyle: "disc" }}>{skill}</li>
                         ))}
                     </ul>
                 </div>
@@ -160,7 +163,7 @@ const OtherSkills = (): JSX.Element => {
             <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Other Skills</h2>
             <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
                 {other_skill_list.map((skill, index) => (
-                    <li key={index} translate="no">{skill}</li>
+                    <li key={index} translate="no" style={{ listStyle: "disc" }}>{skill}</li>
                 ))}
             </ul>
         </div>
@@ -184,10 +187,10 @@ const Languages = (): JSX.Element => {
         <div style={{ margin: "0.5cm 0.7cm 0 0.7cm" }}>
             <h2 style={{ fontSize: titleSize, color: coolColor2 }}>Languages</h2>
             <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.8cm", listStyle: "none" }}>
-                <li style={{ marginBottom: "0.1cm" }}> <MX width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="Spanish" value="Mother Tongue" /> </li>
-                <li style={{ marginBottom: "0.1cm" }}> <US width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="English" value="Conversational (B2 - C1)" /> </li>
-                <li style={{ marginBottom: "0.1cm" }}> <FR width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="French" value="Conversational (B2)" /> </li>
-                <li style={{ marginBottom: "0.1cm" }}> <DE width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="German" value="Learning (A1)" /> </li>
+                <li className="flex flex-row gap-1 items-center" style={{ marginBottom: "0.1cm" }}> <MX width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="Spanish" value="Mother Tongue" /> </li>
+                <li className="flex flex-row gap-1 items-center" style={{ marginBottom: "0.1cm" }}> <US width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="English" value="Conversational (B2 - C1)" /> </li>
+                <li className="flex flex-row gap-1 items-center" style={{ marginBottom: "0.1cm" }}> <FR width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="French" value="Conversational (B2)" /> </li>
+                <li className="flex flex-row gap-1 items-center" style={{ marginBottom: "0.1cm" }}> <DE width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="German" value="Learning (A1)" /> </li>
             </ul>
         </div>
     );
@@ -225,7 +228,7 @@ const SectionTitle = (props: { img: string, title: string, imgWidthDiff?: number
             <div style={{ display: "flex", justifyContent: "left", alignItems: "center", margin: "0.3cm 0 0 0.5cm" }}>
                 <img src={props.img}
                     style={{
-                        width: ((0.9 + (props.imgWidthDiff ?? 0)) + "cm"),
+                        width: ((0.8 + (props.imgWidthDiff ?? 0)) + "cm"),
                         margin:
                             "0 " +
                             ((0.5 + (props.imgRightMarginDiff ?? 0)) + "cm") + " " +
@@ -241,8 +244,8 @@ const SectionTitle = (props: { img: string, title: string, imgWidthDiff?: number
 
 const WorkInfo = (props: { title: string, company: string, period: string, description: string, contact?: string, skills: string[], dontTranslateTitle?: boolean }): JSX.Element => {
     return (
-        <div style={{ margin: "-0.2cm 0.5cm 0 0.5cm" }}>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm" }}>
+        <div className="flex flex-col" style={{ margin: "-0.2cm 0.5cm -0.3cm 0.5cm" }}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.2cm" }}>
                 <h2>
                     <span translate={props.dontTranslateTitle ? "no" : "yes"}
                         style={{ fontSize: titleSize, color: coolColor1, fontWeight: "bold" }}
@@ -259,7 +262,7 @@ const WorkInfo = (props: { title: string, company: string, period: string, descr
                 {props.description}
                 <span style={{ color: coolColor3, fontSize: "0.36cm" }}>{props.contact}</span>
             </p>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.3cm" }}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.35cm" }}>
                 {props.skills.map((skill, index) => (
                     <>
                         <span key={index} translate="no"
@@ -276,8 +279,15 @@ const WorkInfo = (props: { title: string, company: string, period: string, descr
 
 const ProfessionalExperience = () => {
     return (
-        <div style={{ marginTop: "0.45cm 0 0 0" }}>
+        <div style={{ margin: "0 0 0.5cm 0" }}>
             <SectionTitle img="https://cdn-icons-png.flaticon.com/512/4804/4804197.png" title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
+            <WorkInfo
+                title="Software Developer" dontTranslateTitle company="CISZ" period="May 2025 – Now"
+                description="As a fullstack developer with .NET, Entity Framework and Next, I've worked on systems for government entities from requirements to deployment,
+                including warehouse management, among others. "
+                // contact="[Tech Chief: Denise Oliveros - 33 ???? ????]"
+                skills={[".NET", "EF", "Next", "Tailwind CSS", "SQL (SSMS)", "S3", "IIS"]}
+            />
             <WorkInfo
                 title="Jr IT Consultant & Sw Dev" dontTranslateTitle company="Gebartech" period="Ene 2024 – Nov 2024"
                 description="I’ve participated in the analysis and development of web apps under Azure, closely interacting with the client and end users."
@@ -285,9 +295,9 @@ const ProfessionalExperience = () => {
             />
             <WorkInfo
                 title="Game Developer" dontTranslateTitle company="BC Media Lab" period="Dec 2021 – Oct 2023"
-                description="Published a mobile game in the Play Store and worked on another project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
+                description="Published a mobile game in the Play Store and worked on a PC/Console project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
                 contact="[Tech leader: Edgar Leal - 664 266 9991]"
-                skills={["Unity", "C#", "Git", "GitLab", "SCRUM", "Documentation"]}
+                skills={["Unity", "C#", "System Design", "Git", "GitLab", "SCRUM", "Documentation"]}
             />
         </div>
     );
@@ -295,7 +305,7 @@ const ProfessionalExperience = () => {
 
 const SkillSetTitle = (props: { icon: string, title: string, sublink: string, dontTranslateTitle?: boolean }): JSX.Element => {
     return (
-        <div style={{ marginBottom: "-0.2cm" }}>
+        <div style={{ marginBottom: "-0.25cm" }}>
             <Link to={"https://raulalexchavez.github.io/#" + props.sublink} target="_blank"
                 style={{
                     color: coolColor3, fontSize: sectionTitleSize,
@@ -344,16 +354,18 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet" dontTranslateTitle
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        I have completed various courses about .NET, Blazor, Unit Testing, APIs, etc.
-                        You can see more aobut my experience in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
+                        Worked heavily with .NET and EF in backend developing apps for government entities.
+                        I have also completed various courses in the topic.
                     </div>
                 }
-                skills={["ASP.NET", "MVC", "Blazor", "API", "Entity Framework", "Unit Testing"]}
+                skills={["ASP.NET", "Entity Framework (EF)", "API", "Unit Testing", "MVC", "Blazor"]}
             />
             <SkillSetSection icon="bi-controller" title="Game Development" sublink="/gamedev"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Published a game in the Play Store and worked on <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">many other projects</Link>, some <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">playabale online now</Link>!
+                        Published a game in the Play Store and worked on {" "}
+                        <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">many other projects</Link>,
+                        some <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">playabale online now</Link>!
                     </div>
                 }
                 skills={["Unity", "Game Design", "Multplayer", "C#", "Godot", "Game Jams"]}
@@ -361,7 +373,8 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-browser-chrome" title="Web Development" sublink="/webdev"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
+                        I've worked with Next.js as my tech of choice for frontend for more than 2 years.
+                        I also made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
                     </div>
                 }
                 skills={["React", "Next", "MongoDB", "SQL", "PHP", "Typescript", "HTML", "CSS"]}
@@ -376,7 +389,8 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-cpu-fill" title="Artificial Intelligence" sublink="/ai"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Can use the OpenAI API for <Link to={"https://raulalexchavez.github.io/#/ai"} target="_blank">in-app integrated ChatGPT capabilities</Link>. I have knowledge in Prompt Engineering and I'm learning more in AI.
+                        I'm actively learning AI with a focus in Machine Learning.
+                        For now, I can use the OpenAI API for <Link to={"https://raulalexchavez.github.io/#/ai"} target="_blank">in-app integrated ChatGPT capabilities</Link>.
                     </div>
                 }
             />
@@ -388,15 +402,13 @@ const SchoolInfo = (props: { flag: JSX.Element, school: string, career: string, 
     return (
         <div style={{ margin: "-0.2cm 0.5cm 0 0.5cm" }}>
             <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm" }}>
-                <h2>
-                    {props.flag}
+                <div className="flex flex-row items-center gap-2 mb-2">
+                    <span className="-mt-2"> {props.flag}</span>
                     <span style={{ fontSize: titleSize, color: coolColor1, fontWeight: "bold" }}>{props.school}</span>
-                    {" "}
                     <span style={{ fontSize: "0.39cm", color: mainColorDark, fontWeight: "bold" }}>{props.career}</span>
-                    {" "}
-                    <span style={{ fontSize: "0.34cm", color: coolColor1, fontWeight: "light", marginLeft: "-0.05cm", marginRight: "0.05cm" }}>{"[" + props.place + "]"}</span>
+                    <span style={{ fontSize: "0.34cm", color: coolColor1, fontWeight: "light" }}>{"[" + props.place + "]"}</span>
                     <span style={{ fontSize: "0.34cm", color: coolColor1, fontWeight: "light" }}>{"[" + props.period + "]"}</span>
-                </h2>
+                </div>
             </div>
             <p style={{ color: mainColorDark, fontSize: normalTextSize }}>{props.description}</p>
         </div>
@@ -408,7 +420,7 @@ const Education = (): JSX.Element => {
     return (
         <div style={{ margin: "0.45cm 0 0 0" }}>
             <SectionTitle img="https://static-00.iconduck.com/assets.00/graduation-cap-icon-512x335-2rjjt0b3.png" title="Education" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
-            <div style={{ marginBottom: "0.2cm" }} />
+            <div style={{ marginBottom: "0.5cm" }} />
             <SchoolInfo
                 flag={<ES style={flagStyle} />}
                 school="UGR ETSIIT"
@@ -423,14 +435,15 @@ const Education = (): JSX.Element => {
                 career="Computational Systems"
                 place="México"
                 period="Aug 2018 – Jul 2024"
-                description="I was awarded 4 times a scholarship given to the top 1% students. I was part of the University Council, the Competitive Programming Club and more. I also learned a lot about Software Engineering, SDLC, CMMI, UML and processes in the software industry.."
+                description="I graduated with honors as a top 1% student.
+                I was part of the University Council, the Competitive Programming Club and the Tutoring Program.
+                I learned a lot about Software Engineering, SDLC, CMMI, UML and more."
             />
         </div>
     )
 }
 
 const CV = () => {
-
     useEffect(() => {
         const originalTitle = document.title;
         document.title = "raul-alex-chavez-cv"; // Set the title before printing
