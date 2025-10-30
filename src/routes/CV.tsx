@@ -523,7 +523,7 @@ const CV = () => {
             <div className="not-print:hidden">
                 {printableContent()}
             </div>
-            <div className="not-print:flex print:hidden">
+            <div className="not-print:flex print:hidden no-print">
                 {pageShowableContent()}
             </div>
             <button
