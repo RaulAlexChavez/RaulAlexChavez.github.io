@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MX, US, FR, ES, DE } from "country-flag-icons/react/3x2";
-import { BriefcaseBusiness, Code, GraduationCap, LucideProps } from "lucide-react";
+import { BriefcaseBusiness, Code, GraduationCap, LucideProps, Printer } from "lucide-react";
 
 const bgColor = "#222a35";
 const coolColor1 = "#00b0f0"
@@ -186,7 +186,7 @@ const Languages = (): JSX.Element => {
             <h2 style={{ fontSize: titleSize, color: coolColor2 }}>Languages</h2>
             <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.8cm", listStyle: "none" }}>
                 <li style={{ marginBottom: "0.1cm" }}> <MX width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="Spanish" value="Mother Tongue" /> </li>
-                <li style={{ marginBottom: "0.1cm" }}> <US width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="English" value="Conversational (B2 - C1)" /> </li>
+                <li style={{ marginBottom: "0.1cm" }}> <US width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="English" value="Advanced (B2 - C1)" /> </li>
                 <li style={{ marginBottom: "0.1cm" }}> <FR width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="French" value="Conversational (B2)" /> </li>
                 <li style={{ marginBottom: "0.1cm" }}> <DE width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="German" value="Learning (A1)" /> </li>
             </ul>
@@ -260,7 +260,7 @@ const WorkInfo = (props: { title: string, company: string, period: string, descr
                 {props.description}
                 <span style={{ color: coolColor3, fontSize: "0.36cm" }}>{props.contact}</span>
             </p>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.3cm" }}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginTop: "-0.4cm" }}>
                 {props.skills.map((skill, index) => (
                     <>
                         <span key={index} translate="no"
@@ -346,22 +346,24 @@ const SkillSetSection = (props: { icon: string, title: string, sublink: string, 
 
 const AreasOfExpertise = (): JSX.Element => {
     return (
-        <>
+        <div style={{ margin: "0.2cm 0 0 0" }}>
             <SectionTitle icon={Code} title="Areas of Expertise" imgWidthDiff={-0.05} imgRightMarginDiff={0} imgLeftMarginDiff={0.05} />
 
             <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet" dontTranslateTitle
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        I have completed various courses about .NET, Blazor, Unit Testing, APIs, etc.
-                        You can see more aobut my experience in my <Link to={"https://raulalexchavez.github.io/#/dotnet"} target="_blank">webpage</Link>.
+                        Worked heavily with .NET and EF in backend developing apps for government entities.
+                        I have also completed various courses in the topic.
                     </div>
                 }
-                skills={["ASP.NET", "MVC", "Blazor", "API", "Entity Framework", "Unit Testing"]}
+                skills={["ASP.NET", "Entity Framework (EF)", "API", "Unit Testing", "MVC", "Blazor"]}
             />
             <SkillSetSection icon="bi-controller" title="Game Development" sublink="/gamedev"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Published a game in the Play Store and worked on <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">many other projects</Link>, some <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">playabale online now</Link>!
+                        Published a game in the Play Store and worked on {" "}
+                        <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">many other projects</Link>,
+                        some <Link to={"https://raulalexchavez.github.io/#/gamedev"} target="_blank">playabale online now</Link>!
                     </div>
                 }
                 skills={["Unity", "Game Design", "Multplayer", "C#", "Godot", "Game Jams"]}
@@ -369,7 +371,8 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-browser-chrome" title="Web Development" sublink="/webdev"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
+                        I've worked with Next.js as my tech of choice for frontend for about 2 years.<br />
+                        I also made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
                     </div>
                 }
                 skills={["React", "Next", "MongoDB", "SQL", "PHP", "Typescript", "HTML", "CSS"]}
@@ -384,11 +387,12 @@ const AreasOfExpertise = (): JSX.Element => {
             <SkillSetSection icon="bi-cpu-fill" title="Artificial Intelligence" sublink="/ai"
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
-                        Can use the OpenAI API for <Link to={"https://raulalexchavez.github.io/#/ai"} target="_blank">in-app integrated ChatGPT capabilities</Link>. I have knowledge in Prompt Engineering and I'm learning more in AI.
+                        I'm actively learning AI with a focus in Machine Learning.
+                        For now, I can use the OpenAI API for <Link to={"https://raulalexchavez.github.io/#/ai"} target="_blank">in-app integrated ChatGPT capabilities</Link>.
                     </div>
                 }
             />
-        </>
+        </div>
     );
 }
 
@@ -423,7 +427,7 @@ const Education = (): JSX.Element => {
                 career="Informatics"
                 place="Granada, Spain"
                 period="Sep 2023 – Feb 2024"
-                description="Earned a scholarship to study in Spain. I learnt about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics."
+                description="Earned a scholarship to study in Spain. I learnt about Qt, OpenGL, Computer Vision, Linear Algebra, among other topics. I loved the international and intercultural experience!"
             />
             <SchoolInfo
                 flag={<MX style={flagStyle} />}
@@ -431,7 +435,9 @@ const Education = (): JSX.Element => {
                 career="Computational Systems"
                 place="México"
                 period="Aug 2018 – Jul 2024"
-                description="I was awarded 4 times a scholarship given to the top 1% students. I was part of the University Council, the Competitive Programming Club and more. I also learned a lot about Software Engineering, SDLC, CMMI, UML and processes in the software industry.."
+                description="I graduated with honors as a top 1% student.
+                I was part of the University Council, the Competitive Programming Club and the Tutoring Program.
+                I learned a lot about Software Engineering, SDLC, CMMI, UML and more."
             />
         </div>
     )
@@ -494,9 +500,13 @@ const CV = () => {
                     borderRadius: "0.3cm",
                     cursor: "pointer",
                 }}
-                className="bi-printer no-print"
+                className="no-print"
             >
-                {" Print"}
+                <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "3rem" }}>
+                    <Printer size={48} />
+                    {" Print"}
+                </span>
+                <span style={{ fontSize: "1.5rem", color: "#ccc" }}>A4 recommended</span>
             </button>
         </div>
     )

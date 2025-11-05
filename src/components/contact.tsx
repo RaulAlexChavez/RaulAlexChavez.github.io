@@ -3,6 +3,7 @@ import "../styles/global.css";
 import US from "country-flag-icons/react/3x2/US";
 import FR from "country-flag-icons/react/3x2/FR";
 import { Link } from "react-router-dom";
+import { DE } from "country-flag-icons/react/3x2";
 
 interface LanguageLevelProps {
     filledStars: number,
@@ -11,7 +12,7 @@ interface LanguageLevelProps {
 }
 
 const LanguageLevel = (props: LanguageLevelProps): JSX.Element => {
-    const starStyle: React.CSSProperties = { fontSize: '3vw', fontWeight: 'bold', color: '#dddd00'};
+    const starStyle: React.CSSProperties = { fontSize: '2.5vw', fontWeight: 'bold', color: '#dddd00'};
     const star = <p className="bi-star scale-on-hover-1-1" style={starStyle}></p>;
     const starFill = <p className="bi-star-fill scale-on-hover-1-1" style={starStyle}></p>;
     const starHalf = <p className="bi-star-half scale-on-hover-1-1" style={starStyle}></p>;
@@ -41,15 +42,17 @@ const LanguageLevel = (props: LanguageLevelProps): JSX.Element => {
 const Contact: React.FC = () => {
     const columnStyle: React.CSSProperties = { width: '50%', margin: '0.5vw', marginBottom: "2vw", textAlign: 'left', padding: '0.1vw' };
     const bigTextStyle: React.CSSProperties = { fontSize: '2.2vw', fontWeight: 'bold', marginBottom: '-2vw' };
-    const flagStyle = { width: '6.5vw', height: '6.5vw', marginTop: '-0.5vw' };
+    const flagStyle = { width: '6vw', height: '6vw', marginTop: '-0.5vw' };
     
     return (
         <div style={{ marginTop: '5vw', margin: '0 3vw 0 3vw', borderTop: '3px solid #ccc', textAlign: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '0.5vw', marginTop: '3vw' }}>
                 <div style={columnStyle} className="text-center align-items-center">
-                    <LanguageLevel filledStars={5} halfStars={0} flag={<img className="shadow-on-hover scale-on-hover-1-1" src="images/mexico-flag.jpeg" style={{...flagStyle, height: "4.4vw"}}/>} />
+                    <LanguageLevel filledStars={5} halfStars={0} flag={<img className="shadow-on-hover scale-on-hover-1-1" src="images/mexico-flag.jpeg" style={{...flagStyle, height: "4vw"}}/>} />
+                    <div style={{ margin: "0.5vw" }}/>
                     <LanguageLevel filledStars={4} halfStars={1} flag={<US className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
-                    <LanguageLevel filledStars={3} halfStars={1} flag={<FR className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
+                    <LanguageLevel filledStars={4} halfStars={0} flag={<FR className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
+                    <LanguageLevel filledStars={1} halfStars={0} flag={<DE className="shadow-on-hover scale-on-hover-1-1" style={flagStyle}/>} />
                 </div>
                 <div style={{ ...columnStyle, display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: "-1vw" }} className="text-left">
                     <p className="bi-whatsapp green-fg fw-bold" style={bigTextStyle}>{" "}(+52) 33 5120 3757</p>
