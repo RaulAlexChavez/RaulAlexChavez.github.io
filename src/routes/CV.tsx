@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MX, US, FR, ES, DE } from "country-flag-icons/react/3x2";
+import { BriefcaseBusiness, Code, GraduationCap, LucideProps } from "lucide-react";
 
 const bgColor = "#222a35";
 const coolColor1 = "#00b0f0"
@@ -219,19 +220,19 @@ const PersonalInfo = (): JSX.Element => {
     );
 };
 
-const SectionTitle = (props: { img: string, title: string, imgWidthDiff?: number, imgRightMarginDiff?: number, imgLeftMarginDiff?: number }) => {
+interface SectionTitleProps {
+    icon: React.ComponentType<LucideProps>;
+    title: string;
+    imgWidthDiff?: number;
+    imgRightMarginDiff?: number;
+    imgLeftMarginDiff?: number;
+}
+
+const SectionTitle = (props: SectionTitleProps) => {
     return (
         <>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", margin: "0.3cm 0 0 0.5cm" }}>
-                <img src={props.img}
-                    style={{
-                        width: ((0.9 + (props.imgWidthDiff ?? 0)) + "cm"),
-                        margin:
-                            "0 " +
-                            ((0.5 + (props.imgRightMarginDiff ?? 0)) + "cm") + " " +
-                            "0.3cm " +
-                            ((0 + (props.imgLeftMarginDiff ?? 0)) + "cm")
-                    }} />
+            <div style={{ display: "flex", flexDirection: "row", alignItems: "center", marginLeft: "0.5cm", color: "black" }}>
+                <props.icon style={{ width: "0.8cm", height: "0.8cm", marginTop: "-0.25cm", marginRight: "0.2cm" }} />
                 <h1 style={{ fontSize: sectionTitleSize, color: mainColorDark, fontWeight: "lighter" }}>{props.title}</h1>
             </div>
             <hr style={{ flex: 1, height: "0.07cm", border: "none", backgroundColor: mainColorDark, margin: "-0.1cm 0.4cm 0.15cm 0.4cm" }} />
@@ -241,8 +242,8 @@ const SectionTitle = (props: { img: string, title: string, imgWidthDiff?: number
 
 const WorkInfo = (props: { title: string, company: string, period: string, description: string, contact?: string, skills: string[], dontTranslateTitle?: boolean }): JSX.Element => {
     return (
-        <div style={{ margin: "-0.2cm 0.5cm 0 0.5cm" }}>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm" }}>
+        <div style={{ margin: "-0.3cm 0.5cm 0 0.5cm" }}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.3cm" }}>
                 <h2>
                     <span translate={props.dontTranslateTitle ? "no" : "yes"}
                         style={{ fontSize: titleSize, color: coolColor1, fontWeight: "bold" }}
@@ -276,18 +277,25 @@ const WorkInfo = (props: { title: string, company: string, period: string, descr
 
 const ProfessionalExperience = () => {
     return (
-        <div style={{ marginTop: "0.45cm 0 0 0" }}>
-            <SectionTitle img="https://cdn-icons-png.flaticon.com/512/4804/4804197.png" title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
+        <div>
+            <SectionTitle icon={BriefcaseBusiness} title="Professional Experience" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
+            <WorkInfo
+                title="Software Developer" dontTranslateTitle company="CISZ (Government Entity)" period="May 2025 – Now"
+                description="As a fullstack developer with .NET, Entity Framework and Next, I've worked on systems for government entities from requirements to deployment,
+                including warehouse management, among others. "
+                // contact="[Tech Chief: Denise Oliveros - 33 ???? ????]"
+                skills={[".NET", "EF", "Next", "Tailwind CSS", "SQL (SSMS)", "S3", "IIS"]}
+            />
             <WorkInfo
                 title="Jr IT Consultant & Sw Dev" dontTranslateTitle company="Gebartech" period="Ene 2024 – Nov 2024"
-                description="I’ve participated in the analysis and development of web apps under Azure, closely interacting with the client and end users."
+                description="I’ve participated in the analysis and development of web apps for specific needs, closely interacting with the client and end users."
                 skills={["Next", "React", "TypeScript", "Express", "Bootstrap", "MongoDB"]}
             />
             <WorkInfo
                 title="Game Developer" dontTranslateTitle company="BC Media Lab" period="Dec 2021 – Oct 2023"
-                description="Published a mobile game in the Play Store and worked on another project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
+                description="Published a mobile game in the Play Store and worked on a PC/Console project. Implemented systems such as Multiplayer, Saving Data, RPG Stats and Combat. "
                 contact="[Tech leader: Edgar Leal - 664 266 9991]"
-                skills={["Unity", "C#", "Git", "GitLab", "SCRUM", "Documentation"]}
+                skills={["Unity", "C#", "System Design", "Git", "GitLab", "SCRUM", "Documentation"]}
             />
         </div>
     );
@@ -314,7 +322,7 @@ const SkillSetSection = (props: { icon: string, title: string, sublink: string, 
             style={{ margin: "0.3cm 0.2cm 0 0.4cm" }}
         >
             <SkillSetTitle dontTranslateTitle={props.dontTranslateTitle} icon={props.icon} title={props.title} sublink={props.sublink} />
-            {props.content}
+            <div style={{ marginTop: "-0.3cm" }}>{props.content}</div>
             <div style={{ marginTop: "0.1cm", fontSize: normalTextSize, color: "gray" }}>
                 {
                     props.skills ?
@@ -339,7 +347,7 @@ const SkillSetSection = (props: { icon: string, title: string, sublink: string, 
 const AreasOfExpertise = (): JSX.Element => {
     return (
         <>
-            <SectionTitle img="https://images.freeimages.com/fic/images/icons/2770/ios_7_icons/512/code.png" title="Areas of Expertise" imgWidthDiff={-0.05} imgRightMarginDiff={0} imgLeftMarginDiff={0.05} />
+            <SectionTitle icon={Code} title="Areas of Expertise" imgWidthDiff={-0.05} imgRightMarginDiff={0} imgLeftMarginDiff={0.05} />
 
             <SkillSetSection icon="bi-microsoft" title=".NET" sublink="/dotnet" dontTranslateTitle
                 content={
@@ -387,7 +395,7 @@ const AreasOfExpertise = (): JSX.Element => {
 const SchoolInfo = (props: { flag: JSX.Element, school: string, career: string, place: string, period: string, description: string }): JSX.Element => {
     return (
         <div style={{ margin: "-0.2cm 0.5cm 0 0.5cm" }}>
-            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.1cm" }}>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "center", marginBottom: "-0.15cm" }}>
                 <h2>
                     {props.flag}
                     <span style={{ fontSize: titleSize, color: coolColor1, fontWeight: "bold" }}>{props.school}</span>
@@ -407,7 +415,7 @@ const Education = (): JSX.Element => {
     const flagStyle: React.CSSProperties = { width: "0.8cm", margin: "0.15cm 0.1cm 0 0" }
     return (
         <div style={{ margin: "0.45cm 0 0 0" }}>
-            <SectionTitle img="https://static-00.iconduck.com/assets.00/graduation-cap-icon-512x335-2rjjt0b3.png" title="Education" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
+            <SectionTitle icon={GraduationCap} title="Education" imgWidthDiff={0.1} imgRightMarginDiff={-0.1} />
             <div style={{ marginBottom: "0.2cm" }} />
             <SchoolInfo
                 flag={<ES style={flagStyle} />}
@@ -465,7 +473,7 @@ const CV = () => {
                         <Languages />
                         <PersonalInfo />
                     </div>
-                    <div style={{ flex: 3, textAlign: "left" }}>
+                    <div style={{ flex: 3, textAlign: "left", marginTop: "0.3cm" }}>
                         <ProfessionalExperience />
                         <AreasOfExpertise />
                         <Education />
