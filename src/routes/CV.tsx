@@ -64,7 +64,7 @@ const MyLinks = (): JSX.Element => {
             <div style={{ margin: "0.2cm" }}>
                 <img src="https://cdn-icons-png.flaticon.com/512/4906/4906292.png"
                     style={{ width: "1cm", marginRight: "0.2cm" }} />
-                <Link to={"https://raulalexchavez.github.io/"}
+                <Link to={"https://raulalex.vercel.app/"}
                     style={{ color: coolColor1 }}>
                     My Portfolio Web Page
                 </Link>
@@ -72,7 +72,7 @@ const MyLinks = (): JSX.Element => {
             <div style={{ margin: "0.2cm" }}>
                 <img src="images/linkedin.png"
                     style={{ width: "0.8cm", marginRight: "0.4cm" }} />
-                <Link to={"https://raulalexchavez.github.io/"}
+                <Link to={"https://www.linkedin.com/in/raulalexchavez/"}
                     style={{ color: coolColor1 }}>
                     LinkedIn
                 </Link>
@@ -83,7 +83,7 @@ const MyLinks = (): JSX.Element => {
 
 const Profile = (): JSX.Element => {
     return (
-        <div style={{ margin: "0.7cm 0.7cm 0 0.7cm" }}>
+        <div style={{ margin: "0.6cm 0.7cm 0 0.7cm" }}>
             <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Profile</h2>
             <p style={{ fontSize: normalTextSize, color: mainColorLight }}>
                 I’m a social and curious person, very good at speaking in public and explaining ideas.
@@ -102,9 +102,11 @@ const top_skill_list = [
     "Entity Framework",
     "Next.js",
     "React",
+    "TypeScript (TS)",
     "SQL",
     "Unity for Game Dev",
     "Git & GitLab",
+    "Requirements Engineering",
 ]
 
 const secondary_skill_list = [
@@ -112,10 +114,11 @@ const secondary_skill_list = [
     "Regex",
     "Tailwind CSS",
     "HTML, CSS, JS",
-    "TypeScript (TS)",
     "MongoDB",
     "C, C++, Java",
     "Arduino",
+    "Godot",
+    "CI/CD",
 ]
 
 const other_skill_list = [
@@ -130,7 +133,7 @@ const other_skill_list = [
 
 const Skills = (): JSX.Element => {
     return (
-        <div style={{ margin: "0.6cm 0.7cm 0 0.7cm" }}>
+        <div style={{ margin: "0.5cm 0.7cm 0 0.7cm" }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 {/* <div style={{ display: "flex", flexDirection: "column" }}> */}
                     <div style={{ flex: 55, marginRight: "0.2cm" }}>
@@ -157,7 +160,7 @@ const Skills = (): JSX.Element => {
 
 const OtherSkills = (): JSX.Element => {
     return (
-        <div style={{ margin: "0.1cm 0.7cm 0 0.7cm" }}>
+        <div style={{ margin: "0cm 0.7cm 0 0.7cm" }}>
             <h2 style={{ fontSize: titleSize, color: coolColor2, marginBottom: "0.1cm" }}>Other Skills</h2>
             <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.5cm" }}>
                 {other_skill_list.map((skill, index) => (
@@ -182,7 +185,7 @@ const Languages = (): JSX.Element => {
         )
     }
     return (
-        <div style={{ margin: "0.5cm 0.7cm 0 0.7cm" }}>
+        <div style={{ margin: "0.4cm 0.7cm 0 0.7cm" }}>
             <h2 style={{ fontSize: titleSize, color: coolColor2 }}>Languages</h2>
             <ul style={{ fontSize: normalTextSize, color: mainColorLight, marginLeft: "-0.8cm", listStyle: "none" }}>
                 <li style={{ marginBottom: "0.1cm" }}> <MX width={"0.7cm"} style={{ border: "solid #81deff 0.03cm" }} /> <InfoAttribute title="Spanish" value="Mother Tongue" /> </li>
@@ -312,6 +315,14 @@ const SkillSetTitle = (props: { icon: string, title: string, sublink: string, do
             >
                 <p translate={props.dontTranslateTitle ? "no" : "yes"} className={props.icon} style={{ marginRight: "0.3cm" }} /><p>{props.title}</p>
             </Link>
+            {/* <div
+                style={{
+                    color: coolColor3, fontSize: sectionTitleSize,
+                    display: "flex", justifyContent: "left", alignItems: "center"
+                }}
+            >
+                <p translate={props.dontTranslateTitle ? "no" : "yes"} className={props.icon} style={{ marginRight: "0.3cm" }} /><p>{props.title}</p>
+            </div> */}
         </div>
     );
 }
@@ -372,7 +383,7 @@ const AreasOfExpertise = (): JSX.Element => {
                 content={
                     <div style={{ color: mainColorDark, fontSize: normalTextSize }}>
                         I've worked with Next.js as my tech of choice for frontend for about 2 years.<br />
-                        I also made <Link to={"https://raulalexchavez.github.io/"} target="_blank">my own webpage</Link> with React. See more <Link to={"https://raulalexchavez.github.io/#/webdev"} target="_blank">here</Link>.
+                        I also made <Link to={"https://raulalexchavez.github.io"} target="_blank">my own webpage</Link> with React. <Link style={{fontSize: 10}} to={"https://raulalex.vercel.app/"} target="_blank">(New version with Next)</Link>.
                     </div>
                 }
                 skills={["React", "Next", "MongoDB", "SQL", "PHP", "Typescript", "HTML", "CSS"]}

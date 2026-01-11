@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../styles/global.css";
 import "./DotNet.css";
 import { Link } from "react-router-dom";
-import { CertificateCard, IconsRow } from "../components";
+import { CertificateCard, IconsRow, SkillCard } from "../components";
 
 function DotNet() {
   useEffect(() => {
@@ -39,13 +39,29 @@ function DotNet() {
             <img src="https://thinkotb.b-cdn.net/wp-content/uploads/2023/01/c-4.svg" alt="C#" style={{ width: '11vw', height: '11vw', borderRadius: '40%', marginRight: '2vw' }} />
             <div className="text-start">
               <p>
-                I started using <span style={mainColorStyle}>.NET</span> at <span style={mainColorStyle}>university</span>, and since I knew about its <span style={mainColorStyle}>high demanded</span>, I have been going further with various <span style={mainColorStyle}>courses</span>.
+                I use .NET as my backend framework of choice. I have experience building <span style={mainColorStyle}>RESTful APIs</span> using <span style={mainColorStyle}>ASP.NET Core</span> and <span style={mainColorStyle}>Entity Framework</span>. I am familiar with concepts such as <span style={mainColorStyle}>dependency injection</span>, <span style={mainColorStyle}>middleware</span>, and <span style={mainColorStyle}>routing</span>.
               </p>
               <p>
-                I have <span style={mainColorStyle}>great proficiency</span> with <span style={mainColorStyle}>C#</span> in general, from <span style={mainColorStyle}>Unity</span> and from <span style={mainColorStyle}>.NET</span>. I have practiced my skills by my own and I would love to apply them in a <span style={mainColorStyle}>professional environment</span>.
+                I have <span style={mainColorStyle}>great proficiency</span> with <span style={mainColorStyle}>C#</span> in general, from <span style={mainColorStyle}>Unity</span> and from <span style={mainColorStyle}>.NET</span>.
               </p>
             </div>
           </div>
+        </div>
+
+        <h1 className="super-title">💡 Experience</h1>
+
+        <div className="skillset-card-group">
+          <SkillCard
+            experience="CISZ [1y]"
+            xpNoAdd
+            bgColor="#333"
+            image="images/government.png"
+            title="Full Stack Developer"
+            titleStyle={{fontSize: "2vw"}}
+            description="I work mainly with .NET, EF, Next and SQL. I've worked on systems for government entities from requirements to deployment, including warehouse management, among others."
+            descriptionStyle={{fontSize: "1.3vw"}}
+            width="45%"
+          />
         </div>
 
         <h1 className="super-title">📜 Qualifications</h1>
