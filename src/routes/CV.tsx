@@ -64,7 +64,7 @@ const MyLinks = (): JSX.Element => {
             <div style={{ margin: "0.2cm" }}>
                 <img src="https://cdn-icons-png.flaticon.com/512/4906/4906292.png"
                     style={{ width: "1cm", marginRight: "0.2cm" }} />
-                <Link to={"https://raulalex.vercel.app/"}
+                <Link to={"https://raulalexchavez.github.io"}
                     style={{ color: coolColor1 }}>
                     My Portfolio Web Page
                 </Link>
