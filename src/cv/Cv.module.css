@@ -1,0 +1,438 @@
+.page {
+  --cv-ink: #17212b;
+  --cv-muted: #46515c;
+  --cv-navy: #18334f;
+  --cv-cyan: #00b0f0;
+  --cv-cyan-light: #81deff;
+  --cv-paper: #ffffff;
+  --cv-todo-bg: #fff0c2;
+  --cv-todo-ink: #5a3b00;
+  --cv-font: Arial, Helvetica, sans-serif;
+  color: var(--cv-ink);
+  font-family: var(--cv-font);
+  font-size: 10.25pt;
+  line-height: 1.35;
+  margin: 0 auto 2rem;
+  max-width: 210mm;
+  width: 100%;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.toolbar {
+  align-items: center;
+  background: #f4f7f9;
+  border: 1px solid #d4dde4;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cv-space-2);
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: var(--cv-space-2);
+}
+
+.toolbar p {
+  color: var(--cv-muted);
+  font-size: 0.85rem;
+  margin: 0;
+  width: 100%;
+}
+
+.variantButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.toolbar button {
+  background: white;
+  border: 1px solid #71808d;
+  border-radius: 0.3rem;
+  color: #17212b;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+}
+
+.toolbar button[aria-pressed="true"],
+.toolbar .printButton {
+  background: #075c7d;
+  border-color: #075c7d;
+  color: #fff;
+}
+
+.toolbar button:focus-visible {
+  outline: 3px solid #007da8;
+  outline-offset: 2px;
+}
+
+.document {
+  background: var(--cv-paper);
+  margin: 0 auto;
+  max-width: 210mm;
+  min-height: 297mm;
+  width: 100%;
+}
+
+.document h1,
+.document h2,
+.document h3,
+.document p,
+.document ul {
+  margin-top: 0;
+}
+
+.document a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  overflow-wrap: anywhere;
+}
+
+.ats {
+  color: #20252a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.7pt;
+  line-height: 1.3;
+  padding: 13mm;
+}
+
+.atsHeader {
+  border-bottom: 1px solid var(--cv-navy);
+  margin-bottom: 2mm;
+  padding-bottom: 1.5mm;
+}
+
+.atsHeader h1,
+.designedHeader h1 {
+  color: var(--cv-navy);
+  font-size: 22pt;
+  line-height: 1.1;
+  margin: 0 0 2mm;
+}
+
+.role {
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 0 0 1mm;
+}
+
+.headerContact {
+  color: #343a40;
+  font-size: 9.5pt;
+}
+
+.headerContact p {
+  margin: 0 0 0.4mm;
+}
+
+.contactList,
+.languageList,
+.bulletList {
+  margin-bottom: 0;
+  padding-left: 4mm;
+}
+
+.contactList li,
+.languageList li,
+.bulletList li {
+  margin-bottom: 1mm;
+}
+
+.section {
+  margin: 0 0 2mm;
+}
+
+.sectionTitle {
+  border-bottom: 1px solid var(--cv-navy);
+  color: var(--cv-navy);
+  font-size: 10.25pt;
+  font-weight: 700;
+  margin: 0 0 0.8mm;
+  padding-bottom: 0.4mm;
+  text-transform: uppercase;
+}
+
+.profile {
+  margin: 0;
+}
+
+.experienceItem,
+.educationItem,
+.skillGroup {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.experienceItem {
+  margin-bottom: 2.2mm;
+}
+
+.jobHeader {
+  margin-bottom: 0.6mm;
+}
+
+.jobTitle {
+  color: #20252a;
+  font-size: 9.7pt;
+  font-weight: 700;
+  margin: 0;
+}
+
+.jobMeta {
+  color: #46515c;
+  font-size: 9.7pt;
+  font-weight: 700;
+  margin: 0 0 0.5mm;
+}
+
+.jobCompany,
+.jobDate {
+  color: #46515c;
+  font-weight: 600;
+}
+
+.deloitteHeader .jobTitle {
+  color: var(--cv-navy);
+}
+
+.bulletList {
+  list-style: disc;
+  margin: 0.4mm 0 0;
+  padding-left: 5mm;
+}
+
+.bulletList li {
+  margin-bottom: 0.35mm;
+}
+
+.technologies,
+.educationDetail {
+  color: #46515c;
+  font-size: 9.5pt;
+  margin: 0.6mm 0 0;
+}
+
+.skillGroups {
+  display: block;
+}
+
+.skillText {
+  color: #20252a;
+  margin: 0 0 0.4mm;
+}
+
+.educationItem {
+  margin-bottom: 1mm;
+}
+
+.educationItem .jobTitle {
+  font-size: 9.7pt;
+}
+
+.languageLine {
+  margin: 0;
+}
+
+.todo {
+  background: var(--cv-todo-bg);
+  border-radius: 2px;
+  color: var(--cv-todo-ink);
+  font-weight: 700;
+  padding: 0 1px;
+}
+
+.designedGrid {
+  display: grid;
+  grid-template-columns: 31% minmax(0, 1fr);
+  min-height: 270mm;
+}
+
+.sidebar {
+  background: var(--cv-navy);
+  color: #fff;
+  padding: 7mm 5mm;
+}
+
+.sidebar .section {
+  margin-bottom: 5mm;
+}
+
+.sidebar .sectionTitle {
+  border-color: var(--cv-cyan-light);
+  color: var(--cv-cyan-light);
+  font-size: 10pt;
+}
+
+.sidebar .contactList,
+.sidebar .languageList {
+  font-size: 8.2pt;
+  list-style: none;
+  overflow-wrap: anywhere;
+  padding: 0;
+}
+
+.sidebar .contactList li,
+.sidebar .languageList li {
+  margin-bottom: 2mm;
+}
+
+.sidebar a {
+  color: #fff;
+}
+
+.photo {
+  border: 1.2mm solid var(--cv-cyan-light);
+  border-radius: 50%;
+  display: block;
+  height: 36mm;
+  margin: 0 auto 6mm;
+  object-fit: cover;
+  width: 36mm;
+}
+
+.mainColumn {
+  padding: 8mm 8mm 6mm;
+}
+
+.designedHeader {
+  border-bottom: 2px solid var(--cv-cyan);
+  margin-bottom: 4mm;
+  padding-bottom: 3mm;
+}
+
+.designedHeader h1 {
+  color: var(--cv-navy);
+  font-size: 21pt;
+}
+
+.designedHeader .role {
+  color: #075c7d;
+  margin-bottom: 0;
+}
+
+.designed .sectionTitle {
+  color: var(--cv-navy);
+}
+
+.designed .jobTitle {
+  color: var(--cv-navy);
+}
+
+.designed .experienceItem {
+  margin-bottom: 3mm;
+}
+
+@media (max-width: 720px) {
+  .page {
+    font-size: 10pt;
+    padding: 0 0.75rem;
+  }
+
+  .designedGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .mainColumn {
+    order: 1;
+    padding: 7mm 6mm;
+  }
+
+  .sidebar {
+    padding: 6mm;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .page {
+    font-size: 10.25pt;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .document {
+    margin: 0;
+    max-width: none;
+    min-height: 297mm;
+    overflow: visible;
+    width: 210mm;
+  }
+
+  .ats {
+    font-size: 9.7pt;
+    line-height: 1.3;
+    padding: 13mm;
+  }
+
+  .atsHeader h1 {
+    font-size: 22pt;
+  }
+
+  .ats .section {
+    margin-bottom: 2mm;
+  }
+
+  .ats .sectionTitle {
+    font-size: 10.25pt;
+    margin-bottom: 0.8mm;
+  }
+
+  .ats .experienceItem {
+    margin-bottom: 2.2mm;
+  }
+
+  .ats .jobTitle {
+    font-size: 9.7pt;
+  }
+
+  .ats .bulletList {
+    margin-bottom: 0;
+  }
+
+  .ats .headerContact {
+    font-size: 9.5pt;
+  }
+
+  .ats .technologies,
+  .ats .educationDetail {
+    font-size: 9.5pt;
+  }
+
+  .designedGrid {
+    grid-template-columns: 31% minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .sidebar,
+  .mainColumn {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: inherit !important;
+  }
+}
