@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Cv, { CvVariant } from "./Cv";
-import { cvData } from "./cvData";
+import { CvData } from "./cvData";
 import styles from "./Cv.module.css";
 
-const CvPage = (): JSX.Element => {
+interface CvPageProps {
+  data: CvData;
+}
+
+const CvPage = ({ data }: CvPageProps): JSX.Element => {
   const [variant, setVariant] = useState<CvVariant>("ats");
   const [printRequested, setPrintRequested] = useState(false);
 
@@ -16,9 +20,9 @@ const CvPage = (): JSX.Element => {
 
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = "Raúl Alejandro Chávez Valenzuela - CV";
+    document.title = data.documentTitle;
     return () => { document.title = originalTitle; };
-  }, []);
+  }, [data.documentTitle]);
 
   const printAtsVersion = (): void => {
     if (variant === "ats") {
@@ -31,22 +35,22 @@ const CvPage = (): JSX.Element => {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.toolbar} aria-label={cvData.controls.switchVariant}>
+      <nav className={styles.toolbar} aria-label={data.controls.switchVariant}>
         <div className={styles.variantButtons}>
           <button type="button" aria-pressed={variant === "ats"} onClick={() => setVariant("ats")}>
-            {cvData.controls.ats}
+            {data.controls.ats}
           </button>
           <button type="button" aria-pressed={variant === "designed"} onClick={() => setVariant("designed")}>
-            {cvData.controls.designed}
+            {data.controls.designed}
           </button>
         </div>
         {/* In Chrome choose Save as PDF; verify the text layer by selecting all and copying from the PDF. */}
         <button type="button" className={styles.printButton} onClick={printAtsVersion}>
-          {cvData.controls.print}
+          {data.controls.print}
         </button>
-        <p>{cvData.controls.printHint}</p>
+        <p>{data.controls.printHint}</p>
       </nav>
-      <Cv data={cvData} variant={variant} />
+      <Cv data={data} variant={variant} />
     </main>
   );
 };

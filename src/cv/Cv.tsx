@@ -34,6 +34,7 @@ const ContactLine = ({ data }: { data: CvData }): JSX.Element => (
       <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>{" | "}
       <a href={`tel:${data.contact.phone.replace(/[^+\d]/g, "")}`}>{data.contact.phone}</a>{" | "}
       <span>{data.contact.location}</span>
+      {data.availability && <>{" | "}<span>{data.availability}</span></>}
     </p>
     <p>
       {data.links.filter((link) => link.url).map((link, index) => (
@@ -91,6 +92,26 @@ const ExperienceSection = ({ data }: { data: CvData }): JSX.Element => (
   </Section>
 );
 
+const ProjectsSection = ({ data }: { data: CvData }): JSX.Element | null => {
+  if (!data.projects?.length || !data.sections.projects) {
+    return null;
+  }
+
+  return (
+    <Section title={data.sections.projects}>
+      {data.projects.map((project) => (
+        <article className={styles.experienceItem} key={project.name}>
+          <h3 className={styles.jobTitle}>{project.name}</h3>
+          <p className={styles.profile}>{project.description}</p>
+          <p className={styles.technologies}>
+            <strong>{data.sections.technologies}</strong> {project.technologies.join(", ")}
+          </p>
+        </article>
+      ))}
+    </Section>
+  );
+};
+
 const EducationSection = ({ data }: { data: CvData }): JSX.Element => (
   <Section title={data.sections.education}>
     {data.education.map((item) => (
@@ -127,6 +148,7 @@ const Cv = ({ data, variant }: CvProps): JSX.Element => {
             <ContactLine data={data} />
           </header>
           <Section title={data.sections.profile}><p className={styles.profile}>{data.profile}</p></Section>
+          <ProjectsSection data={data} />
           <ExperienceSection data={data} />
           <SkillsSection data={data} />
           <EducationSection data={data} />
@@ -149,6 +171,7 @@ const Cv = ({ data, variant }: CvProps): JSX.Element => {
               <ContactLine data={data} />
             </header>
             <Section title={data.sections.profile}><p className={styles.profile}>{data.profile}</p></Section>
+            <ProjectsSection data={data} />
             <ExperienceSection data={data} />
             <EducationSection data={data} />
           </div>

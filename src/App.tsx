@@ -9,6 +9,10 @@ import React, { ReactNode } from 'react';
 import Home from './routes/Home';
 import BombParty from './routes/games/bomb-party/BombParty';
 import CvPage from './cv/CvPage';
+import { bairesdevCvData } from './cv/bairesdevCvData';
+import { codecompassCvData } from './cv/codecompassCvData';
+import { traackrCvData } from './cv/traackrCvData';
+import { helixCvData } from './cv/helixCvData';
 
 function App() {
 	const MainApp = (): JSX.Element => {
@@ -21,7 +25,10 @@ function App() {
 				<Route path="/tutoring" element={<Tutoring />} />
 				<Route path="/ai" element={<AI />} />
 				<Route path="/cv" element={<CV />} />
-				<Route path="/cv/backend" element={<CvPage />} />
+				<Route path="/cv/bairesdev" element={<CvPage data={bairesdevCvData} />} />
+				<Route path="/cv/codecompass" element={<CvPage data={codecompassCvData} />} />
+				<Route path="/cv/traackr" element={<CvPage data={traackrCvData} />} />
+				<Route path="/cv/helix" element={<CvPage data={helixCvData} />} />
 				<Route path="/games/bomb-party-multilingual" element={<BombParty />} />
 			</Routes>
 		);
